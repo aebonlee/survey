@@ -12,7 +12,7 @@ export default function Footer(): ReactElement {
         <div className="footer-content">
           <div className="footer-brand">
             <div className="footer-logo">
-              <span className="brand-study">Research</span>
+              <span className="brand-study">Survey</span>
               <span className="brand-master"> Master</span>
             </div>
             <p className="footer-description">{t('footer.description')}</p>
@@ -22,14 +22,14 @@ export default function Footer(): ReactElement {
           <div className="footer-links">
             <h4>{t('footer.quickLinks')}</h4>
             <ul className="footer-link-list">
-              <li><Link to="/research-design">{isKo ? '연구설계' : 'Research Design'}</Link></li>
-              <li><Link to="/sampling">{isKo ? '표본추출' : 'Sampling'}</Link></li>
-              <li><Link to="/measurement">{isKo ? '측정과 척도' : 'Measurement'}</Link></li>
-              <li><Link to="/survey">{isKo ? '설문조사법' : 'Survey'}</Link></li>
-              <li><Link to="/experiment">{isKo ? '실험연구' : 'Experiment'}</Link></li>
-              <li><Link to="/qualitative">{isKo ? '질적연구' : 'Qualitative'}</Link></li>
-              <li><Link to="/statistics">{isKo ? '통계분석' : 'Statistics'}</Link></li>
-              <li><Link to="/ethics">{isKo ? '연구윤리' : 'Ethics'}</Link></li>
+              <li><Link to="/proposal">{isKo ? '연구계획서' : 'Proposal'}</Link></li>
+              <li><Link to="/literature">{isKo ? '문헌검토' : 'Literature'}</Link></li>
+              <li><Link to="/methods">{isKo ? '연구방법' : 'Methods'}</Link></li>
+              <li><Link to="/data-collection">{isKo ? '자료수집' : 'Data Collection'}</Link></li>
+              <li><Link to="/analysis">{isKo ? '분석' : 'Analysis'}</Link></li>
+              <li><Link to="/interpretation">{isKo ? '결과해석' : 'Interpretation'}</Link></li>
+              <li><Link to="/writing">{isKo ? '논문작성' : 'Writing'}</Link></li>
+              <li><Link to="/irb-ethics">{isKo ? 'IRB윤리' : 'IRB & Ethics'}</Link></li>
             </ul>
           </div>
 
@@ -57,6 +57,7 @@ export default function Footer(): ReactElement {
                 <option value="https://chatgpt.dreamitbiz.com">ChatGPT Master</option>
                 <option value="https://claude.dreamitbiz.com">Claude Master</option>
                 <option value="https://study.dreamitbiz.com">Study Master</option>
+                <option value="https://research.dreamitbiz.com">Research Master</option>
               </select>
             </div>
           </div>

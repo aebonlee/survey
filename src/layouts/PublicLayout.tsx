@@ -11,14 +11,14 @@ const ForgotPassword = lazy(() => import('../pages/ForgotPassword'));
 const MyPage = lazy(() => import('../pages/MyPage'));
 
 // Learning path pages
-const ResearchDesign = lazy(() => import('../pages/research-design/ResearchDesign'));
-const Sampling = lazy(() => import('../pages/sampling/Sampling'));
-const Measurement = lazy(() => import('../pages/measurement/Measurement'));
-const Survey = lazy(() => import('../pages/survey/Survey'));
-const Experiment = lazy(() => import('../pages/experiment/Experiment'));
-const Qualitative = lazy(() => import('../pages/qualitative/Qualitative'));
-const Statistics = lazy(() => import('../pages/statistics/Statistics'));
-const Ethics = lazy(() => import('../pages/ethics/Ethics'));
+const Proposal = lazy(() => import('../pages/proposal/Proposal'));
+const Literature = lazy(() => import('../pages/literature/Literature'));
+const Methods = lazy(() => import('../pages/methods/Methods'));
+const DataCollection = lazy(() => import('../pages/data-collection/DataCollection'));
+const Analysis = lazy(() => import('../pages/analysis/Analysis'));
+const Interpretation = lazy(() => import('../pages/interpretation/Interpretation'));
+const Writing = lazy(() => import('../pages/writing/Writing'));
+const IrbEthics = lazy(() => import('../pages/irb-ethics/IrbEthics'));
 
 const NotFound = lazy(() => import('../pages/NotFound'));
 
@@ -44,14 +44,14 @@ export default function PublicLayout(): ReactElement {
             <Route path="/mypage" element={<MyPage />} />
 
             {/* Learning Paths */}
-            <Route path="/research-design" element={<ResearchDesign />} />
-            <Route path="/sampling" element={<Sampling />} />
-            <Route path="/measurement" element={<Measurement />} />
-            <Route path="/survey" element={<Survey />} />
-            <Route path="/experiment" element={<Experiment />} />
-            <Route path="/qualitative" element={<Qualitative />} />
-            <Route path="/statistics" element={<Statistics />} />
-            <Route path="/ethics" element={<Ethics />} />
+            <Route path="/proposal" element={<Proposal />} />
+            <Route path="/literature" element={<Literature />} />
+            <Route path="/methods" element={<Methods />} />
+            <Route path="/data-collection" element={<DataCollection />} />
+            <Route path="/analysis" element={<Analysis />} />
+            <Route path="/interpretation" element={<Interpretation />} />
+            <Route path="/writing" element={<Writing />} />
+            <Route path="/irb-ethics" element={<IrbEthics />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -6,14 +6,14 @@ import { useAuth } from '../../contexts/AuthContext';
 import type { ReactElement } from 'react';
 
 const NAV_ITEMS = [
-  { path: '/research-design', ko: '연구설계', en: 'Design' },
-  { path: '/sampling', ko: '표본추출', en: 'Sampling' },
-  { path: '/measurement', ko: '측정·척도', en: 'Measure' },
-  { path: '/survey', ko: '설문조사', en: 'Survey' },
-  { path: '/experiment', ko: '실험연구', en: 'Experiment' },
-  { path: '/qualitative', ko: '질적연구', en: 'Qualitative' },
-  { path: '/statistics', ko: '통계분석', en: 'Statistics' },
-  { path: '/ethics', ko: '연구윤리', en: 'Ethics' },
+  { path: '/proposal', ko: '연구계획서', en: 'Proposal' },
+  { path: '/literature', ko: '문헌검토', en: 'Literature' },
+  { path: '/methods', ko: '연구방법', en: 'Methods' },
+  { path: '/data-collection', ko: '자료수집', en: 'Data' },
+  { path: '/analysis', ko: '분석', en: 'Analysis' },
+  { path: '/interpretation', ko: '결과해석', en: 'Interpret' },
+  { path: '/writing', ko: '논문작성', en: 'Writing' },
+  { path: '/irb-ethics', ko: 'IRB윤리', en: 'IRB' },
 ];
 
 export default function Navbar(): ReactElement {
@@ -63,7 +63,7 @@ export default function Navbar(): ReactElement {
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
         <div className="navbar-inner">
           <Link to="/" className="navbar-logo">
-            <span className="logo-study">Research</span>
+            <span className="logo-study">Survey</span>
             <span className="logo-master">Master</span>
           </Link>
 

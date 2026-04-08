@@ -1,7 +1,7 @@
 /* ============================================
-   Research Master - Base Styles
-   Deep Blue Primary (#1E40AF)
-   공부 잘하는 방법 (How to Study Effectively)
+   Survey Master - Base Styles
+   Teal Primary (#0F766E)
+   논문작성 가이드 (Paper Writing Guide)
    ============================================ */
 
 * {
@@ -21,14 +21,14 @@
 }
 
 :root {
-    /* ── Primary Colors (Study Green) ── */
-    --primary: #1E40AF;
-    --primary-dark: #1E3A8A;
-    --primary-light: #3B82F6;
+    /* ── Primary Colors (Teal) ── */
+    --primary: #0F766E;
+    --primary-dark: #0D6560;
+    --primary-light: #14B8A6;
 
-    /* ── Accent (Wisdom Purple) ── */
-    --accent: #8B5CF6;
-    --accent-light: #A78BFA;
+    /* ── Accent (Emerald) ── */
+    --accent: #10B981;
+    --accent-light: #34D399;
 
     /* ── Background Colors ── */
     --bg-white: #FFFFFF;
@@ -57,11 +57,11 @@
     --container-max: 1280px;
 
     /* ── Gradients ── */
-    --primary-gradient: linear-gradient(135deg, #1E40AF 0%, #3B82F6 100%);
-    --accent-gradient: linear-gradient(135deg, #1E3A8A 0%, #1E40AF 50%, #3B82F6 100%);
-    --hero-bg: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
-    --hero-bg-dark: linear-gradient(135deg, #020617 0%, #0F172A 50%, #020617 100%);
-    --highlight-gradient: linear-gradient(135deg, #93C5FD 0%, #BFDBFE 50%, #FFFFFF 100%);
+    --primary-gradient: linear-gradient(135deg, #0F766E 0%, #14B8A6 100%);
+    --accent-gradient: linear-gradient(135deg, #0D6560 0%, #0F766E 50%, #14B8A6 100%);
+    --hero-bg: linear-gradient(135deg, #042F2E 0%, #0F3D3B 50%, #042F2E 100%);
+    --hero-bg-dark: linear-gradient(135deg, #021716 0%, #042F2E 50%, #021716 100%);
+    --highlight-gradient: linear-gradient(135deg, #5EEAD4 0%, #99F6E4 50%, #FFFFFF 100%);
 
     /* ── Glassmorphism ── */
     --glass-bg: rgba(255, 255, 255, 0.85);
@@ -79,8 +79,8 @@
     --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ── Color Theme: Research (Default - Deep Blue) ── */
-/* Default is already #1E40AF, no override needed */
+/* ── Color Theme: Survey (Default - Teal) ── */
+/* Default is already #0F766E, no override needed */
 
 /* ── Color Theme: Wisdom (Purple) ── */
 html[data-color="wisdom"] {
@@ -191,7 +191,7 @@ a { color: inherit; text-decoration: none; }
     background: var(--primary-dark);
     border-color: var(--primary-dark);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);
+    box-shadow: 0 8px 24px rgba(15, 118, 110, 0.3);
 }
 
 .btn-secondary {
@@ -203,7 +203,7 @@ a { color: inherit; text-decoration: none; }
     background: var(--primary);
     color: var(--text-white);
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(5, 150, 105, 0.3);
+    box-shadow: 0 8px 24px rgba(15, 118, 110, 0.3);
 }
 
 .btn-primary-large {

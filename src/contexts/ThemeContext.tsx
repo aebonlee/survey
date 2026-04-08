@@ -13,7 +13,7 @@ interface ThemeContextValue {
 const ThemeContext = createContext<ThemeContextValue | null>(null);
 
 const COLOR_OPTIONS = [
-  { name: 'research', color: '#1E40AF' },
+  { name: 'survey', color: '#0F766E' },
   { name: 'wisdom', color: '#8B5CF6' },
   { name: 'ocean', color: '#2563EB' },
   { name: 'sunset', color: '#D97706' },
@@ -38,7 +38,7 @@ function getAutoTheme(): string {
 
 export function ThemeProvider({ children }: { children: ReactNode }): ReactElement {
   const [mode, setMode] = useState(() => getCookie('theme_mode') || 'auto');
-  const [colorTheme, setColorThemeState] = useState(() => getCookie('color_theme') || 'research');
+  const [colorTheme, setColorThemeState] = useState(() => getCookie('color_theme') || 'survey');
 
   const resolvedTheme = mode === 'auto' ? getAutoTheme() : mode;
 
@@ -47,7 +47,7 @@ export function ThemeProvider({ children }: { children: ReactNode }): ReactEleme
   }, [resolvedTheme]);
 
   useEffect(() => {
-    if (colorTheme === 'research') {
+    if (colorTheme === 'survey') {
       document.documentElement.removeAttribute('data-color');
     } else {
       document.documentElement.setAttribute('data-color', colorTheme);

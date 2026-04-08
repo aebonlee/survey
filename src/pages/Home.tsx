@@ -13,22 +13,22 @@ export default function Home(): ReactElement {
 
   const carouselSlides = [
     {
-      title: isKo ? '연구설계부터 통계분석까지' : 'From Research Design to Statistical Analysis',
+      title: isKo ? '연구계획서부터 논문 투고까지' : 'From Research Proposal to Paper Submission',
       description: isKo
-        ? '연구 문제 수립, 가설 설정, 자료수집, 통계분석까지 — 사회과학 조사방법론의 모든 것을 체계적으로 배웁니다.'
-        : 'From research question formulation to hypothesis testing, data collection, and statistical analysis — learn everything systematically.',
+        ? '연구 주제 선정, 문헌검토, 연구방법 설계, 자료수집, 분석, 논문작성까지 — 학술 논문작성의 전 과정을 체계적으로 배웁니다.'
+        : 'From topic selection to literature review, method design, data collection, analysis, and writing — learn the entire academic paper writing process.',
     },
     {
-      title: isKo ? '과학적 연구의 기초' : 'Foundations of Scientific Research',
+      title: isKo ? '과학적이고 체계적인 연구' : 'Scientific and Systematic Research',
       description: isKo
-        ? '신뢰도와 타당도를 갖춘 측정도구 개발, 표본추출, 실험설계 등 과학적 연구의 핵심 원리를 학습합니다.'
-        : 'Learn core principles of scientific research: measurement instrument development, sampling, and experimental design.',
+        ? '양적·질적·혼합 연구방법론, 통계분석, 결과해석 등 과학적 연구 수행의 핵심 역량을 학습합니다.'
+        : 'Learn core research competencies: quantitative, qualitative, and mixed methods, statistical analysis, and result interpretation.',
     },
     {
-      title: isKo ? '윤리적이고 신뢰할 수 있는 연구' : 'Ethical and Trustworthy Research',
+      title: isKo ? '윤리적이고 신뢰할 수 있는 논문' : 'Ethical and Trustworthy Papers',
       description: isKo
-        ? 'IRB 심의, 연구대상자 보호, 연구부정행위 방지 등 윤리적 연구 수행의 원칙을 배웁니다.'
-        : 'Learn principles of ethical research conduct including IRB review, participant protection, and misconduct prevention.',
+        ? 'IRB 심의, 동의서 작성, 연구 부정행위 방지 등 연구윤리를 준수하는 논문작성법을 배웁니다.'
+        : 'Learn ethical paper writing practices including IRB review, informed consent, and research misconduct prevention.',
     },
   ];
 
@@ -41,7 +41,7 @@ export default function Home(): ReactElement {
         <HeroBackground />
         <div className="hero-content">
           <div className="hero-badge">
-            <i className="fa-solid fa-microscope" />
+            <i className="fa-solid fa-pen-nib" />
             {t('hero.badge')}
           </div>
           <h1 className="hero-title">
@@ -50,8 +50,8 @@ export default function Home(): ReactElement {
           </h1>
           <p className="hero-description">{t('hero.description')}</p>
           <div className="hero-actions">
-            <Link to="/research-design" className="btn btn-primary-large">{t('hero.cta')}</Link>
-            <Link to="/sampling" className="btn btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#fff' }}>
+            <Link to="/proposal" className="btn btn-primary-large">{t('hero.cta')}</Link>
+            <Link to="/literature" className="btn btn-secondary" style={{ borderColor: 'rgba(255,255,255,0.3)', color: '#fff' }}>
               {t('hero.ctaSecondary')}
             </Link>
           </div>
@@ -67,10 +67,10 @@ export default function Home(): ReactElement {
             <p className="section-subtitle">{t('features.subtitle')}</p>
           </div>
           <div className="features-grid">
-            <FeatureCard icon="fa-compass-drafting" title={t('features.habits.title')} description={t('features.habits.desc')} />
-            <FeatureCard icon="fa-ruler-combined" title={t('features.memory.title')} description={t('features.memory.desc')} />
-            <FeatureCard icon="fa-flask" title={t('features.strategy.title')} description={t('features.strategy.desc')} />
-            <FeatureCard icon="fa-scale-balanced" title={t('features.balance.title')} description={t('features.balance.desc')} />
+            <FeatureCard icon="fa-file-pen" title={t('features.habits.title')} description={t('features.habits.desc')} />
+            <FeatureCard icon="fa-microscope" title={t('features.memory.title')} description={t('features.memory.desc')} />
+            <FeatureCard icon="fa-chart-line" title={t('features.strategy.title')} description={t('features.strategy.desc')} />
+            <FeatureCard icon="fa-shield-halved" title={t('features.balance.title')} description={t('features.balance.desc')} />
           </div>
         </div>
       </section>
@@ -147,7 +147,7 @@ export default function Home(): ReactElement {
         <div className="container">
           <h2 className="cta-title">{t('cta.title')}</h2>
           <p className="cta-description">{t('cta.description')}</p>
-          <Link to="/research-design" className="btn btn-primary-large">{t('cta.button')}</Link>
+          <Link to="/proposal" className="btn btn-primary-large">{t('cta.button')}</Link>
         </div>
       </section>
     </>
