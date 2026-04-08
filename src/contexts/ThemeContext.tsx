@@ -38,7 +38,7 @@ function getAutoTheme(): string {
 
 export function ThemeProvider({ children }: { children: ReactNode }): ReactElement {
   const [mode, setMode] = useState(() => getCookie('theme_mode') || 'auto');
-  const [colorTheme, setColorThemeState] = useState(() => getCookie('color_theme') || 'study');
+  const [colorTheme, setColorThemeState] = useState(() => getCookie('color_theme') || 'research');
 
   const resolvedTheme = mode === 'auto' ? getAutoTheme() : mode;
 
@@ -47,7 +47,7 @@ export function ThemeProvider({ children }: { children: ReactNode }): ReactEleme
   }, [resolvedTheme]);
 
   useEffect(() => {
-    if (colorTheme === 'study') {
+    if (colorTheme === 'research') {
       document.documentElement.removeAttribute('data-color');
     } else {
       document.documentElement.setAttribute('data-color', colorTheme);
