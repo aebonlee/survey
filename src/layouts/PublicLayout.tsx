@@ -19,6 +19,9 @@ const Analysis = lazy(() => import('../pages/analysis/Analysis'));
 const Interpretation = lazy(() => import('../pages/interpretation/Interpretation'));
 const Writing = lazy(() => import('../pages/writing/Writing'));
 const IrbEthics = lazy(() => import('../pages/irb-ethics/IrbEthics'));
+const QuantitativeMethods = lazy(() => import('../pages/quantitative-methods/QuantitativeMethods'));
+const QualitativeMethodsPage = lazy(() => import('../pages/qualitative-methods/QualitativeMethods'));
+const Ahp = lazy(() => import('../pages/ahp/Ahp'));
 
 const NotFound = lazy(() => import('../pages/NotFound'));
 
@@ -52,6 +55,9 @@ export default function PublicLayout(): ReactElement {
             <Route path="/interpretation" element={<Interpretation />} />
             <Route path="/writing" element={<Writing />} />
             <Route path="/irb-ethics" element={<IrbEthics />} />
+            <Route path="/quantitative-methods" element={<QuantitativeMethods />} />
+            <Route path="/qualitative-methods" element={<QualitativeMethodsPage />} />
+            <Route path="/ahp" element={<Ahp />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>

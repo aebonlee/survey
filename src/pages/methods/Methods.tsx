@@ -1,8 +1,15 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 import SEOHead from '../../components/SEOHead';
 import TipBox from '../../components/TipBox';
 import type { ReactElement } from 'react';
+
+const SUB_PATHS = [
+  { path: '/quantitative-methods', icon: 'fa-square-poll-vertical', ko: '양적연구방법', en: 'Quantitative Methods', color: '#1D4ED8', descKo: '실험설계, 설문조사, 표본추출, 양적자료분석', descEn: 'Experimental design, surveys, sampling, data analysis' },
+  { path: '/qualitative-methods', icon: 'fa-comments', ko: '질적연구방법', en: 'Qualitative Methods', color: '#7E22CE', descKo: '근거이론, 현상학, 사례연구, 질적자료분석', descEn: 'Grounded theory, phenomenology, case study' },
+  { path: '/ahp', icon: 'fa-layer-group', ko: 'AHP연구방법론', en: 'AHP Methodology', color: '#B45309', descKo: '계층구조 설계, 쌍대비교, 일관성 검증', descEn: 'Hierarchy design, pairwise comparison, consistency' },
+];
 
 const SECTIONS = [
   { id: 'overview', icon: 'fa-circle-info', ko: '연구방법론 개요', en: 'Methodology Overview' },
@@ -634,6 +641,27 @@ export default function Methods(): ReactElement {
             {activeSection === 'variables' && <VariablesSection isKo={isKo} />}
             {activeSection === 'writing-methods' && <WritingMethodsSection isKo={isKo} />}
             {activeSection === 'references' && <ReferencesSection isKo={isKo} />}
+
+            {/* Sub-path links */}
+            <div className="guide-section" style={{ marginTop: 32 }}>
+              <h3 style={{ marginBottom: 16 }}>
+                <i className="fa-solid fa-folder-tree" style={{ marginRight: 8 }} />
+                {isKo ? '심화 학습 경로' : 'Advanced Learning Paths'}
+              </h3>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 16 }}>
+                {SUB_PATHS.map(sp => (
+                  <Link key={sp.path} to={sp.path} style={{ textDecoration: 'none', color: 'inherit', display: 'block', padding: 16, borderRadius: 12, border: '1px solid var(--border-color)', background: 'var(--bg-secondary)', transition: 'transform 0.2s, box-shadow 0.2s' }} onMouseEnter={e => { (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'; (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)'; }} onMouseLeave={e => { (e.currentTarget as HTMLElement).style.transform = ''; (e.currentTarget as HTMLElement).style.boxShadow = ''; }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
+                      <div style={{ width: 36, height: 36, borderRadius: 8, background: sp.color, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: 16 }}>
+                        <i className={`fa-solid ${sp.icon}`} />
+                      </div>
+                      <strong style={{ fontSize: 15 }}>{isKo ? sp.ko : sp.en}</strong>
+                    </div>
+                    <p style={{ fontSize: 13, color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>{isKo ? sp.descKo : sp.descEn}</p>
+                  </Link>
+                ))}
+              </div>
+            </div>
 
             <div className="guide-section-nav">
               <button

@@ -25,6 +25,9 @@ export default function Footer(): ReactElement {
               <li><Link to="/proposal">{isKo ? '연구계획서' : 'Proposal'}</Link></li>
               <li><Link to="/literature">{isKo ? '문헌검토' : 'Literature'}</Link></li>
               <li><Link to="/methods">{isKo ? '연구방법' : 'Methods'}</Link></li>
+              <li><Link to="/quantitative-methods">{isKo ? '양적연구방법' : 'Quantitative'}</Link></li>
+              <li><Link to="/qualitative-methods">{isKo ? '질적연구방법' : 'Qual Methods'}</Link></li>
+              <li><Link to="/ahp">{isKo ? 'AHP방법론' : 'AHP'}</Link></li>
               <li><Link to="/data-collection">{isKo ? '자료수집' : 'Data Collection'}</Link></li>
               <li><Link to="/analysis">{isKo ? '분석' : 'Analysis'}</Link></li>
               <li><Link to="/interpretation">{isKo ? '결과해석' : 'Interpretation'}</Link></li>
