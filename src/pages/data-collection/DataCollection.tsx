@@ -773,7 +773,7 @@ function ReferencesSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <>
       <div className="guide-content-header">
-        <h1>{isKo ? '참고문헌' : 'References'}</h1>
+        <h1><i className="fa-solid fa-bookmark" />{isKo ? '참고문헌' : 'References'}</h1>
         <p>{isKo ? '자료수집 학습에 활용된 주요 참고문헌입니다.' : 'Key references used in the study of data collection methods.'}</p>
       </div>
       <div className="guide-section">

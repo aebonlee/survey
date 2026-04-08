@@ -20,7 +20,7 @@ const SECTIONS = [
 function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '연구계획서 개요' : 'Proposal Overview'}</h2>
+      <h2><i className="fa-solid fa-file-pen" />{isKo ? '연구계획서 개요' : 'Proposal Overview'}</h2>
 
       {/* What is a Research Proposal? */}
       <h3>{isKo ? '연구계획서란 무엇인가?' : 'What Is a Research Proposal?'}</h3>
@@ -119,7 +119,7 @@ function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
 function TopicSelectionSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '연구 주제 선정' : 'Topic Selection'}</h2>
+      <h2><i className="fa-solid fa-lightbulb" />{isKo ? '연구 주제 선정' : 'Topic Selection'}</h2>
 
       {/* How to Choose a Topic */}
       <h3>{isKo ? '연구 주제를 어떻게 선정하는가?' : 'How to Choose a Research Topic'}</h3>
@@ -209,7 +209,7 @@ function TopicSelectionSection({ isKo }: { isKo: boolean }): ReactElement {
 function PurposeSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '연구 목적과 필요성' : 'Purpose & Significance'}</h2>
+      <h2><i className="fa-solid fa-bullseye" />{isKo ? '연구 목적과 필요성' : 'Purpose & Significance'}</h2>
 
       {/* Writing Research Purpose */}
       <h3>{isKo ? '연구 목적 작성하기' : 'Writing the Research Purpose'}</h3>
@@ -309,7 +309,7 @@ function PurposeSection({ isKo }: { isKo: boolean }): ReactElement {
 function QuestionsSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '연구 질문과 가설' : 'Questions & Hypotheses'}</h2>
+      <h2><i className="fa-solid fa-question-circle" />{isKo ? '연구 질문과 가설' : 'Questions & Hypotheses'}</h2>
 
       {/* Formulating Research Questions */}
       <h3>{isKo ? '연구 질문 수립하기' : 'Formulating Research Questions'}</h3>
@@ -415,7 +415,7 @@ function QuestionsSection({ isKo }: { isKo: boolean }): ReactElement {
 function BackgroundSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '이론적 배경 작성' : 'Theoretical Background'}</h2>
+      <h2><i className="fa-solid fa-book-open" />{isKo ? '이론적 배경 작성' : 'Theoretical Background'}</h2>
 
       {/* Role of Theoretical Framework */}
       <h3>{isKo ? '이론적 배경의 역할' : 'The Role of the Theoretical Framework'}</h3>
@@ -510,7 +510,7 @@ function BackgroundSection({ isKo }: { isKo: boolean }): ReactElement {
 function PracticeSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '연구계획서 작성 실전' : 'Writing Practice'}</h2>
+      <h2><i className="fa-solid fa-pen-nib" />{isKo ? '연구계획서 작성 실전' : 'Writing Practice'}</h2>
 
       {/* Complete Proposal Structure */}
       <h3>{isKo ? '연구계획서 전체 구조' : 'Complete Proposal Structure'}</h3>
@@ -644,7 +644,7 @@ function PracticeSection({ isKo }: { isKo: boolean }): ReactElement {
 function ReferencesSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '참고문헌' : 'References'}</h2>
+      <h2><i className="fa-solid fa-bookmark" />{isKo ? '참고문헌' : 'References'}</h2>
 
       <h3>{isKo ? '연구계획서 작성을 위한 핵심 참고문헌' : 'Key References for Research Proposal Writing'}</h3>
       <p>

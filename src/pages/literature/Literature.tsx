@@ -20,7 +20,7 @@ const SECTIONS = [
 function PurposeSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '문헌검토의 목적' : 'Purpose of Literature Review'}</h2>
+      <h2><i className="fa-solid fa-bullseye" />{isKo ? '문헌검토의 목적' : 'Purpose of Literature Review'}</h2>
 
       {/* What is a Literature Review? */}
       <h3>{isKo ? '문헌검토란 무엇인가?' : 'What Is a Literature Review?'}</h3>
@@ -102,7 +102,7 @@ function PurposeSection({ isKo }: { isKo: boolean }): ReactElement {
 function SearchStrategySection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '문헌 탐색 전략' : 'Search Strategy'}</h2>
+      <h2><i className="fa-solid fa-magnifying-glass" />{isKo ? '문헌 탐색 전략' : 'Search Strategy'}</h2>
 
       {/* Academic Databases */}
       <h3>{isKo ? '주요 학술 데이터베이스' : 'Major Academic Databases'}</h3>
@@ -177,7 +177,7 @@ function SearchStrategySection({ isKo }: { isKo: boolean }): ReactElement {
 function CriticalReadingSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '비판적 문헌 읽기' : 'Critical Reading'}</h2>
+      <h2><i className="fa-solid fa-glasses" />{isKo ? '비판적 문헌 읽기' : 'Critical Reading'}</h2>
 
       {/* What is Critical Reading? */}
       <h3>{isKo ? '비판적 읽기란 무엇인가?' : 'What Is Critical Reading?'}</h3>
@@ -246,7 +246,7 @@ function CriticalReadingSection({ isKo }: { isKo: boolean }): ReactElement {
 function OrganizingSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '문헌 정리와 분류' : 'Organizing Literature'}</h2>
+      <h2><i className="fa-solid fa-folder-tree" />{isKo ? '문헌 정리와 분류' : 'Organizing Literature'}</h2>
 
       {/* Literature Matrix */}
       <h3>{isKo ? '문헌 매트릭스 활용' : 'Using a Literature Matrix'}</h3>
@@ -326,7 +326,7 @@ function OrganizingSection({ isKo }: { isKo: boolean }): ReactElement {
 function WritingReviewSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '문헌검토 작성법' : 'Writing the Review'}</h2>
+      <h2><i className="fa-solid fa-pen-to-square" />{isKo ? '문헌검토 작성법' : 'Writing the Review'}</h2>
 
       {/* Structure of a Literature Review */}
       <h3>{isKo ? '문헌검토의 구조' : 'Structure of a Literature Review'}</h3>
@@ -401,7 +401,7 @@ function WritingReviewSection({ isKo }: { isKo: boolean }): ReactElement {
 function CitationSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <section className="guide-section">
-      <h2>{isKo ? '인용과 참고문헌 관리' : 'Citation Management'}</h2>
+      <h2><i className="fa-solid fa-quote-right" />{isKo ? '인용과 참고문헌 관리' : 'Citation Management'}</h2>
 
       {/* Citation Styles */}
       <h3>{isKo ? '주요 인용 양식' : 'Major Citation Styles'}</h3>
@@ -505,7 +505,7 @@ function ReferencesSection({ isKo }: { isKo: boolean }): ReactElement {
   return (
     <>
       <div className="guide-content-header">
-        <h1>{isKo ? '참고문헌' : 'References'}</h1>
+        <h1><i className="fa-solid fa-bookmark" />{isKo ? '참고문헌' : 'References'}</h1>
         <p>{isKo ? '문헌검토 학습에 활용된 주요 참고문헌입니다.' : 'Key references for learning about literature reviews.'}</p>
       </div>
       <div className="guide-section">
