@@ -42,38 +42,38 @@ function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
       </p>
 
       <h3>{isKo ? '질적연구의 핵심 특성' : 'Key Characteristics of Qualitative Research'}</h3>
-      <ul>
-        <li>
-          <strong>{isKo ? '자연주의적 탐구 (Naturalistic Inquiry)' : 'Naturalistic Inquiry'}</strong>{' '}
-          {isKo
-            ? '-- 연구 현상이 발생하는 실제 현장에서 데이터를 수집합니다. 인위적 실험 환경이 아닌 참여자의 자연스러운 맥락을 중시합니다.'
-            : '-- Data is collected in the actual setting where the phenomenon occurs. The natural context of participants is valued over artificial laboratory conditions.'}
-        </li>
-        <li>
-          <strong>{isKo ? '귀납적 분석 (Inductive Analysis)' : 'Inductive Analysis'}</strong>{' '}
-          {isKo
-            ? '-- 사전 가설을 검증하기보다 데이터에서 패턴, 범주, 주제를 발견하고 이론을 구축합니다.'
-            : '-- Rather than testing pre-set hypotheses, patterns, categories, and themes are discovered from data to build theory.'}
-        </li>
-        <li>
-          <strong>{isKo ? '총체적 관점 (Holistic Perspective)' : 'Holistic Perspective'}</strong>{' '}
-          {isKo
-            ? '-- 현상을 개별 변인으로 분리하지 않고 전체적 맥락 안에서 통합적으로 이해합니다.'
-            : '-- Phenomena are understood holistically within their full context, not isolated into separate variables.'}
-        </li>
-        <li>
-          <strong>{isKo ? '연구자가 핵심 도구 (Researcher as Instrument)' : 'Researcher as Key Instrument'}</strong>{' '}
-          {isKo
-            ? '-- 연구자 자신이 데이터 수집과 해석의 주요 도구가 됩니다. 이 때문에 성찰성(Reflexivity)이 필수적입니다.'
-            : '-- The researcher serves as the primary instrument for data collection and interpretation, making reflexivity essential.'}
-        </li>
-        <li>
-          <strong>{isKo ? '풍부한 기술 (Thick Description)' : 'Thick Description'}</strong>{' '}
-          {isKo
-            ? '-- Geertz(1973)가 제안한 두꺼운 기술은 맥락, 의미, 의도를 포함한 상세한 서술을 통해 독자가 현상을 깊이 이해할 수 있게 합니다.'
-            : '-- Thick description, proposed by Geertz (1973), allows readers to deeply understand phenomena through detailed narratives that include context, meaning, and intention.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '특성' : 'Characteristic'}</th>
+              <th>{isKo ? '설명' : 'Description'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '자연주의적 탐구 (Naturalistic Inquiry)' : 'Naturalistic Inquiry'}</td>
+              <td>{isKo ? '연구 현상이 발생하는 실제 현장에서 데이터를 수집합니다. 인위적 실험 환경이 아닌 참여자의 자연스러운 맥락을 중시합니다.' : 'Data is collected in the actual setting where the phenomenon occurs. The natural context of participants is valued over artificial laboratory conditions.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '귀납적 분석 (Inductive Analysis)' : 'Inductive Analysis'}</td>
+              <td>{isKo ? '사전 가설을 검증하기보다 데이터에서 패턴, 범주, 주제를 발견하고 이론을 구축합니다.' : 'Rather than testing pre-set hypotheses, patterns, categories, and themes are discovered from data to build theory.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '총체적 관점 (Holistic Perspective)' : 'Holistic Perspective'}</td>
+              <td>{isKo ? '현상을 개별 변인으로 분리하지 않고 전체적 맥락 안에서 통합적으로 이해합니다.' : 'Phenomena are understood holistically within their full context, not isolated into separate variables.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '연구자가 핵심 도구 (Researcher as Instrument)' : 'Researcher as Key Instrument'}</td>
+              <td>{isKo ? '연구자 자신이 데이터 수집과 해석의 주요 도구가 됩니다. 이 때문에 성찰성(Reflexivity)이 필수적입니다.' : 'The researcher serves as the primary instrument for data collection and interpretation, making reflexivity essential.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '풍부한 기술 (Thick Description)' : 'Thick Description'}</td>
+              <td>{isKo ? 'Geertz(1973)가 제안한 두꺼운 기술은 맥락, 의미, 의도를 포함한 상세한 서술을 통해 독자가 현상을 깊이 이해할 수 있게 합니다.' : 'Thick description, proposed by Geertz (1973), allows readers to deeply understand phenomena through detailed narratives that include context, meaning, and intention.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? 'Creswell의 다섯 가지 질적연구 전통' : 'Creswell\'s Five Qualitative Traditions'}</h3>
       <p>
@@ -170,38 +170,38 @@ function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
           ? '질적연구는 참여자와의 밀접한 관계 형성을 수반하므로, 윤리적 고려가 특히 중요합니다. 연구자는 다음의 핵심 윤리 원칙을 준수해야 합니다.'
           : 'Because qualitative research involves close relationships with participants, ethical considerations are especially important. Researchers must observe the following core ethical principles.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '사전 동의 (Informed Consent)' : 'Informed Consent'}</strong>{' '}
-          {isKo
-            ? '-- 연구 목적, 절차, 잠재적 위험과 이점을 충분히 설명하고 자발적 동의를 구합니다.'
-            : '-- Fully explain research purpose, procedures, potential risks and benefits, and obtain voluntary consent.'}
-        </li>
-        <li>
-          <strong>{isKo ? '비밀보장 (Confidentiality)' : 'Confidentiality'}</strong>{' '}
-          {isKo
-            ? '-- 참여자의 신원과 개인정보를 보호하며, 가명 사용 등의 조치를 취합니다.'
-            : '-- Protect participants\' identity and personal information through measures such as the use of pseudonyms.'}
-        </li>
-        <li>
-          <strong>{isKo ? '무해성 원칙 (Do No Harm)' : 'Do No Harm'}</strong>{' '}
-          {isKo
-            ? '-- 연구 참여로 인한 심리적, 사회적, 물리적 해를 최소화합니다.'
-            : '-- Minimize psychological, social, and physical harm from research participation.'}
-        </li>
-        <li>
-          <strong>{isKo ? '호혜성 (Reciprocity)' : 'Reciprocity'}</strong>{' '}
-          {isKo
-            ? '-- 참여자가 연구로부터 적절한 보상이나 이익을 받을 수 있도록 배려합니다.'
-            : '-- Ensure participants receive appropriate compensation or benefits from the research.'}
-        </li>
-        <li>
-          <strong>{isKo ? '연구자의 성찰성 (Reflexivity)' : 'Researcher Reflexivity'}</strong>{' '}
-          {isKo
-            ? '-- 연구자 자신의 가정, 편견, 위치성이 연구에 미치는 영향을 지속적으로 성찰합니다.'
-            : '-- Continuously reflect on how the researcher\'s own assumptions, biases, and positionality affect the research.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '윤리 원칙' : 'Principle'}</th>
+              <th>{isKo ? '설명' : 'Description'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '사전 동의 (Informed Consent)' : 'Informed Consent'}</td>
+              <td>{isKo ? '연구 목적, 절차, 잠재적 위험과 이점을 충분히 설명하고 자발적 동의를 구합니다.' : 'Fully explain research purpose, procedures, potential risks and benefits, and obtain voluntary consent.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '비밀보장 (Confidentiality)' : 'Confidentiality'}</td>
+              <td>{isKo ? '참여자의 신원과 개인정보를 보호하며, 가명 사용 등의 조치를 취합니다.' : 'Protect participants\' identity and personal information through measures such as the use of pseudonyms.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '무해성 원칙 (Do No Harm)' : 'Do No Harm'}</td>
+              <td>{isKo ? '연구 참여로 인한 심리적, 사회적, 물리적 해를 최소화합니다.' : 'Minimize psychological, social, and physical harm from research participation.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '호혜성 (Reciprocity)' : 'Reciprocity'}</td>
+              <td>{isKo ? '참여자가 연구로부터 적절한 보상이나 이익을 받을 수 있도록 배려합니다.' : 'Ensure participants receive appropriate compensation or benefits from the research.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '연구자의 성찰성 (Reflexivity)' : 'Researcher Reflexivity'}</td>
+              <td>{isKo ? '연구자 자신의 가정, 편견, 위치성이 연구에 미치는 영향을 지속적으로 성찰합니다.' : 'Continuously reflect on how the researcher\'s own assumptions, biases, and positionality affect the research.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <TipBox type="important" title={isKo ? 'IRB 심의의 중요성' : 'Importance of IRB Review'}>
         <p>
@@ -609,13 +609,38 @@ function CaseStudySection({ isKo }: { isKo: boolean }): ReactElement {
           ? '사례연구에서 적절한 사례를 선정하는 것은 연구의 성공에 결정적입니다. 사례 선정은 연구 목적, 연구 질문, 이론적 틀에 따라 달라지며, 다음과 같은 전략이 활용됩니다.'
           : 'Selecting appropriate cases is critical to the success of a case study. Case selection depends on the research purpose, research questions, and theoretical framework. The following strategies are commonly used.'}
       </p>
-      <ul>
-        <li><strong>{isKo ? '정보가 풍부한 사례 (Information-rich Cases)' : 'Information-rich Cases'}</strong> {isKo ? '-- 연구 현상에 대해 깊이 있는 정보를 제공할 수 있는 사례' : '-- Cases that can provide in-depth information about the phenomenon'}</li>
-        <li><strong>{isKo ? '극단적/일탈적 사례 (Extreme/Deviant Cases)' : 'Extreme/Deviant Cases'}</strong> {isKo ? '-- 현상의 극단적 표현을 보이는 특이 사례' : '-- Unusual cases showing extreme manifestations of the phenomenon'}</li>
-        <li><strong>{isKo ? '전형적 사례 (Typical Cases)' : 'Typical Cases'}</strong> {isKo ? '-- 해당 현상의 일반적이고 대표적인 사례' : '-- Cases representative and typical of the phenomenon'}</li>
-        <li><strong>{isKo ? '최대 변이 사례 (Maximum Variation Cases)' : 'Maximum Variation Cases'}</strong> {isKo ? '-- 다양한 조건에서의 사례를 선정하여 변이의 범위를 탐구' : '-- Cases selected under diverse conditions to explore the range of variation'}</li>
-        <li><strong>{isKo ? '반증 사례 (Disconfirming Cases)' : 'Disconfirming Cases'}</strong> {isKo ? '-- 기존 패턴이나 가설에 반대되는 사례를 의도적으로 선정' : '-- Cases deliberately selected that contradict existing patterns or hypotheses'}</li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '표집 유형' : 'Sampling Type'}</th>
+              <th>{isKo ? '설명' : 'Description'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '정보가 풍부한 사례 (Information-rich Cases)' : 'Information-rich Cases'}</td>
+              <td>{isKo ? '연구 현상에 대해 깊이 있는 정보를 제공할 수 있는 사례' : 'Cases that can provide in-depth information about the phenomenon'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '극단적/일탈적 사례 (Extreme/Deviant Cases)' : 'Extreme/Deviant Cases'}</td>
+              <td>{isKo ? '현상의 극단적 표현을 보이는 특이 사례' : 'Unusual cases showing extreme manifestations of the phenomenon'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '전형적 사례 (Typical Cases)' : 'Typical Cases'}</td>
+              <td>{isKo ? '해당 현상의 일반적이고 대표적인 사례' : 'Cases representative and typical of the phenomenon'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '최대 변이 사례 (Maximum Variation Cases)' : 'Maximum Variation Cases'}</td>
+              <td>{isKo ? '다양한 조건에서의 사례를 선정하여 변이의 범위를 탐구' : 'Cases selected under diverse conditions to explore the range of variation'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '반증 사례 (Disconfirming Cases)' : 'Disconfirming Cases'}</td>
+              <td>{isKo ? '기존 패턴이나 가설에 반대되는 사례를 의도적으로 선정' : 'Cases deliberately selected that contradict existing patterns or hypotheses'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? '사례연구의 자료 수집' : 'Data Collection in Case Studies'}</h3>
       <p>
@@ -901,32 +926,34 @@ function TrustworthinessSection({ isKo }: { isKo: boolean }): ReactElement {
           ? '삼각검증(Triangulation)은 연구의 신빙성(credibility)을 높이기 위해 다양한 출처, 방법, 연구자, 이론을 활용하는 전략입니다. Denzin(1978)은 네 가지 유형의 삼각검증을 제시하였습니다.'
           : 'Triangulation is a strategy for enhancing credibility by using diverse sources, methods, investigators, and theories. Denzin (1978) proposed four types of triangulation.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '자료 삼각검증 (Data Triangulation)' : 'Data Triangulation'}</strong>{' '}
-          {isKo
-            ? '-- 다양한 시간, 장소, 사람으로부터 데이터를 수집합니다.'
-            : '-- Collect data from diverse times, places, and persons.'}
-        </li>
-        <li>
-          <strong>{isKo ? '연구자 삼각검증 (Investigator Triangulation)' : 'Investigator Triangulation'}</strong>{' '}
-          {isKo
-            ? '-- 여러 연구자가 동일 현상을 연구하여 개별 연구자의 편향을 줄입니다.'
-            : '-- Multiple researchers study the same phenomenon to reduce individual researcher bias.'}
-        </li>
-        <li>
-          <strong>{isKo ? '이론 삼각검증 (Theory Triangulation)' : 'Theory Triangulation'}</strong>{' '}
-          {isKo
-            ? '-- 다양한 이론적 관점에서 데이터를 해석합니다.'
-            : '-- Interpret data from multiple theoretical perspectives.'}
-        </li>
-        <li>
-          <strong>{isKo ? '방법론적 삼각검증 (Methodological Triangulation)' : 'Methodological Triangulation'}</strong>{' '}
-          {isKo
-            ? '-- 면접, 관찰, 문서 분석 등 다양한 방법을 사용하여 데이터를 수집합니다.'
-            : '-- Use multiple methods such as interviews, observation, and document analysis to collect data.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '삼각검증 유형' : 'Type'}</th>
+              <th>{isKo ? '설명' : 'Description'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '자료 삼각검증 (Data Triangulation)' : 'Data Triangulation'}</td>
+              <td>{isKo ? '다양한 시간, 장소, 사람으로부터 데이터를 수집합니다.' : 'Collect data from diverse times, places, and persons.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '연구자 삼각검증 (Investigator Triangulation)' : 'Investigator Triangulation'}</td>
+              <td>{isKo ? '여러 연구자가 동일 현상을 연구하여 개별 연구자의 편향을 줄입니다.' : 'Multiple researchers study the same phenomenon to reduce individual researcher bias.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '이론 삼각검증 (Theory Triangulation)' : 'Theory Triangulation'}</td>
+              <td>{isKo ? '다양한 이론적 관점에서 데이터를 해석합니다.' : 'Interpret data from multiple theoretical perspectives.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '방법론적 삼각검증 (Methodological Triangulation)' : 'Methodological Triangulation'}</td>
+              <td>{isKo ? '면접, 관찰, 문서 분석 등 다양한 방법을 사용하여 데이터를 수집합니다.' : 'Use multiple methods such as interviews, observation, and document analysis to collect data.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? '구성원 확인 (Member Checking)' : 'Member Checking'}</h3>
       <p>

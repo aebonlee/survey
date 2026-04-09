@@ -49,26 +49,36 @@ function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
       </p>
 
       <h3>{isKo ? 'AHP의 3대 원리' : 'Three Fundamental Principles of AHP'}</h3>
-      <ol>
-        <li>
-          <strong>{isKo ? '분해의 원리 (Decomposition)' : 'Principle of Decomposition'}</strong> —{' '}
-          {isKo
-            ? '복잡한 의사결정 문제를 목표(Goal), 기준(Criteria), 하위기준(Sub-criteria), 대안(Alternatives)의 계층적 구조로 분해합니다. 이를 통해 복잡한 문제를 관리 가능한 하위 문제들로 세분화할 수 있습니다.'
-            : 'Decompose a complex decision problem into a hierarchical structure of Goal, Criteria, Sub-criteria, and Alternatives. This allows complex problems to be broken down into manageable sub-problems.'}
-        </li>
-        <li>
-          <strong>{isKo ? '비교판단의 원리 (Comparative Judgments)' : 'Principle of Comparative Judgments'}</strong> —{' '}
-          {isKo
-            ? '계층의 각 수준에서 요소들을 쌍대비교하여 상대적 중요도를 판단합니다. 인간은 절대적 판단보다 상대적 비교에 더 뛰어나다는 심리학적 원리에 기반합니다.'
-            : 'At each level of the hierarchy, elements are compared in pairs to determine relative importance. This is based on the psychological principle that humans are better at making relative comparisons than absolute judgments.'}
-        </li>
-        <li>
-          <strong>{isKo ? '종합의 원리 (Synthesis of Priorities)' : 'Principle of Synthesis of Priorities'}</strong> —{' '}
-          {isKo
-            ? '각 수준에서 도출된 상대적 중요도(가중치)를 종합하여 최종적인 대안의 우선순위를 산출합니다. 이 과정에서 고유벡터(eigenvector) 방법이 사용됩니다.'
-            : 'The relative importance (weights) derived at each level are synthesized to calculate the final priority ranking of alternatives. The eigenvector method is used in this process.'}
-        </li>
-      </ol>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '원리' : 'Principle'}</th>
+              <th>{isKo ? '설명' : 'Description'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '분해의 원리 (Decomposition)' : 'Principle of Decomposition'}</td>
+              <td>{isKo
+                ? '복잡한 의사결정 문제를 목표(Goal), 기준(Criteria), 하위기준(Sub-criteria), 대안(Alternatives)의 계층적 구조로 분해합니다. 이를 통해 복잡한 문제를 관리 가능한 하위 문제들로 세분화할 수 있습니다.'
+                : 'Decompose a complex decision problem into a hierarchical structure of Goal, Criteria, Sub-criteria, and Alternatives. This allows complex problems to be broken down into manageable sub-problems.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '비교판단의 원리 (Comparative Judgments)' : 'Principle of Comparative Judgments'}</td>
+              <td>{isKo
+                ? '계층의 각 수준에서 요소들을 쌍대비교하여 상대적 중요도를 판단합니다. 인간은 절대적 판단보다 상대적 비교에 더 뛰어나다는 심리학적 원리에 기반합니다.'
+                : 'At each level of the hierarchy, elements are compared in pairs to determine relative importance. This is based on the psychological principle that humans are better at making relative comparisons than absolute judgments.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '종합의 원리 (Synthesis of Priorities)' : 'Principle of Synthesis of Priorities'}</td>
+              <td>{isKo
+                ? '각 수준에서 도출된 상대적 중요도(가중치)를 종합하여 최종적인 대안의 우선순위를 산출합니다. 이 과정에서 고유벡터(eigenvector) 방법이 사용됩니다.'
+                : 'The relative importance (weights) derived at each level are synthesized to calculate the final priority ranking of alternatives. The eigenvector method is used in this process.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? 'AHP의 적용 분야' : 'Application Areas of AHP'}</h3>
       <p>
@@ -76,13 +86,38 @@ function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
           ? 'AHP는 그 범용성으로 인해 매우 다양한 분야에서 활용되고 있습니다:'
           : 'Due to its versatility, AHP is applied across a wide range of fields:'}
       </p>
-      <ul>
-        <li><strong>{isKo ? '경영학' : 'Business'}</strong> — {isKo ? '공급업체 선정, 전략적 의사결정, 투자 우선순위, 인사 평가, 마케팅 전략 수립' : 'Supplier selection, strategic decision-making, investment prioritization, personnel evaluation, marketing strategy formulation'}</li>
-        <li><strong>{isKo ? '공학' : 'Engineering'}</strong> — {isKo ? '기술 선택, 프로젝트 위험 평가, 설계 대안 평가, 품질 관리, 에너지 시스템 계획' : 'Technology selection, project risk assessment, design alternative evaluation, quality management, energy system planning'}</li>
-        <li><strong>{isKo ? '공공정책' : 'Public Policy'}</strong> — {isKo ? '정책 우선순위 결정, 자원 배분, 환경 영향 평가, 교통 계획, 도시 개발 전략' : 'Policy prioritization, resource allocation, environmental impact assessment, transportation planning, urban development strategy'}</li>
-        <li><strong>{isKo ? '의료·보건' : 'Healthcare'}</strong> — {isKo ? '치료 방법 선택, 의료 장비 도입, 병원 입지 선정, 보건 정책 평가' : 'Treatment method selection, medical equipment adoption, hospital site selection, health policy evaluation'}</li>
-        <li><strong>{isKo ? '교육' : 'Education'}</strong> — {isKo ? '교육 프로그램 평가, 학교 선택, 커리큘럼 개발 우선순위' : 'Educational program evaluation, school selection, curriculum development prioritization'}</li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '분야' : 'Field'}</th>
+              <th>{isKo ? '적용 예시' : 'Applications'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '경영학' : 'Business'}</td>
+              <td>{isKo ? '공급업체 선정, 전략적 의사결정, 투자 우선순위, 인사 평가, 마케팅 전략 수립' : 'Supplier selection, strategic decision-making, investment prioritization, personnel evaluation, marketing strategy formulation'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '공학' : 'Engineering'}</td>
+              <td>{isKo ? '기술 선택, 프로젝트 위험 평가, 설계 대안 평가, 품질 관리, 에너지 시스템 계획' : 'Technology selection, project risk assessment, design alternative evaluation, quality management, energy system planning'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '공공정책' : 'Public Policy'}</td>
+              <td>{isKo ? '정책 우선순위 결정, 자원 배분, 환경 영향 평가, 교통 계획, 도시 개발 전략' : 'Policy prioritization, resource allocation, environmental impact assessment, transportation planning, urban development strategy'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '의료·보건' : 'Healthcare'}</td>
+              <td>{isKo ? '치료 방법 선택, 의료 장비 도입, 병원 입지 선정, 보건 정책 평가' : 'Treatment method selection, medical equipment adoption, hospital site selection, health policy evaluation'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '교육' : 'Education'}</td>
+              <td>{isKo ? '교육 프로그램 평가, 학교 선택, 커리큘럼 개발 우선순위' : 'Educational program evaluation, school selection, curriculum development prioritization'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? 'AHP와 ANP 비교' : 'AHP vs. ANP Comparison'}</h3>
       <p>
@@ -179,32 +214,42 @@ function HierarchySection({ isKo }: { isKo: boolean }): ReactElement {
           ? '올바른 계층구조를 설계하기 위해서는 다음 원칙들을 준수해야 합니다:'
           : 'To design a proper hierarchy, the following principles must be observed:'}
       </p>
-      <ol>
-        <li>
-          <strong>{isKo ? '상호 배타성 (Mutual Exclusivity)' : 'Mutual Exclusivity'}</strong> —{' '}
-          {isKo
-            ? '같은 수준의 기준들은 서로 개념적으로 겹치지 않아야 합니다. 예를 들어, "비용"과 "경제성"을 동시에 기준으로 사용하면 개념이 중복됩니다.'
-            : 'Criteria at the same level must not conceptually overlap. For example, using both "cost" and "economy" as criteria creates conceptual redundancy.'}
-        </li>
-        <li>
-          <strong>{isKo ? '포괄성 (Exhaustiveness)' : 'Exhaustiveness'}</strong> —{' '}
-          {isKo
-            ? '기준들이 의사결정 문제의 모든 중요한 측면을 포괄해야 합니다. 중요한 기준이 누락되면 분석 결과의 타당성이 저하됩니다.'
-            : 'The criteria must cover all important aspects of the decision problem. Omitting critical criteria undermines the validity of the analysis results.'}
-        </li>
-        <li>
-          <strong>{isKo ? '독립성 (Independence)' : 'Independence'}</strong> —{' '}
-          {isKo
-            ? '같은 수준의 기준들은 서로 독립적이어야 합니다. 기준 A의 중요도가 기준 B의 존재 여부에 따라 달라진다면 독립성이 위배됩니다.'
-            : 'Criteria at the same level must be independent of each other. If the importance of criterion A changes depending on whether criterion B exists, independence is violated.'}
-        </li>
-        <li>
-          <strong>{isKo ? '측정 가능성 (Measurability)' : 'Measurability'}</strong> —{' '}
-          {isKo
-            ? '각 기준은 전문가가 판단할 수 있을 만큼 구체적이고 명확해야 합니다.'
-            : 'Each criterion must be specific and clear enough for experts to make judgments.'}
-        </li>
-      </ol>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '설계 원칙' : 'Principle'}</th>
+              <th>{isKo ? '설명' : 'Description'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '상호 배타성 (Mutual Exclusivity)' : 'Mutual Exclusivity'}</td>
+              <td>{isKo
+                ? '같은 수준의 기준들은 서로 개념적으로 겹치지 않아야 합니다. 예를 들어, "비용"과 "경제성"을 동시에 기준으로 사용하면 개념이 중복됩니다.'
+                : 'Criteria at the same level must not conceptually overlap. For example, using both "cost" and "economy" as criteria creates conceptual redundancy.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '포괄성 (Exhaustiveness)' : 'Exhaustiveness'}</td>
+              <td>{isKo
+                ? '기준들이 의사결정 문제의 모든 중요한 측면을 포괄해야 합니다. 중요한 기준이 누락되면 분석 결과의 타당성이 저하됩니다.'
+                : 'The criteria must cover all important aspects of the decision problem. Omitting critical criteria undermines the validity of the analysis results.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '독립성 (Independence)' : 'Independence'}</td>
+              <td>{isKo
+                ? '같은 수준의 기준들은 서로 독립적이어야 합니다. 기준 A의 중요도가 기준 B의 존재 여부에 따라 달라진다면 독립성이 위배됩니다.'
+                : 'Criteria at the same level must be independent of each other. If the importance of criterion A changes depending on whether criterion B exists, independence is violated.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '측정 가능성 (Measurability)' : 'Measurability'}</td>
+              <td>{isKo
+                ? '각 기준은 전문가가 판단할 수 있을 만큼 구체적이고 명확해야 합니다.'
+                : 'Each criterion must be specific and clear enough for experts to make judgments.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? '기준의 수: 7±2 규칙' : 'Number of Criteria: The 7±2 Rule'}</h3>
       <p>
@@ -285,38 +330,48 @@ function HierarchySection({ isKo }: { isKo: boolean }): ReactElement {
       </ul>
 
       <h3>{isKo ? '계층구조 설계에서의 흔한 실수' : 'Common Mistakes in Hierarchy Design'}</h3>
-      <ul>
-        <li>
-          <strong>{isKo ? '기준의 중복' : 'Overlapping criteria'}</strong> —{' '}
-          {isKo
-            ? '"고객 만족도"와 "서비스 품질"처럼 개념이 겹치는 기준을 같은 수준에 배치하는 실수입니다. 쌍대비교 시 응답자 혼란을 야기합니다.'
-            : 'Placing conceptually overlapping criteria like "customer satisfaction" and "service quality" at the same level. This causes respondent confusion during pairwise comparisons.'}
-        </li>
-        <li>
-          <strong>{isKo ? '과다한 기준 수' : 'Excessive number of criteria'}</strong> —{' '}
-          {isKo
-            ? '한 수준에 10개 이상의 기준을 배치하면 비교 횟수가 45회 이상이 되어 응답 품질이 저하됩니다.'
-            : 'Placing more than 10 criteria at one level results in 45+ comparisons, degrading response quality.'}
-        </li>
-        <li>
-          <strong>{isKo ? '추상적 기준' : 'Vague criteria'}</strong> —{' '}
-          {isKo
-            ? '"전반적 우수성"이나 "기타 요인"처럼 모호한 기준은 전문가의 판단을 어렵게 만듭니다.'
-            : 'Vague criteria like "overall excellence" or "other factors" make it difficult for experts to make judgments.'}
-        </li>
-        <li>
-          <strong>{isKo ? '목표와의 연결성 부족' : 'Weak connection to goal'}</strong> —{' '}
-          {isKo
-            ? '기준이 최상위 목표와 논리적으로 연결되지 않으면 분석 결과의 실질적 의미가 줄어듭니다.'
-            : 'If criteria are not logically connected to the top-level goal, the practical significance of analysis results diminishes.'}
-        </li>
-        <li>
-          <strong>{isKo ? '독립성 위반 간과' : 'Overlooking independence violations'}</strong> —{' '}
-          {isKo
-            ? '기준 간에 명백한 상호 영향이 있음에도 AHP를 적용하면, 결과의 신뢰성이 저하됩니다. 이 경우 ANP를 고려해야 합니다.'
-            : 'Applying AHP when there is obvious mutual influence among criteria undermines result reliability. In such cases, ANP should be considered.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '흔한 실수' : 'Common Mistake'}</th>
+              <th>{isKo ? '해결 방안' : 'Solution'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '기준의 중복' : 'Overlapping criteria'}</td>
+              <td>{isKo
+                ? '"고객 만족도"와 "서비스 품질"처럼 개념이 겹치는 기준을 같은 수준에 배치하는 실수입니다. 쌍대비교 시 응답자 혼란을 야기합니다.'
+                : 'Placing conceptually overlapping criteria like "customer satisfaction" and "service quality" at the same level. This causes respondent confusion during pairwise comparisons.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '과다한 기준 수' : 'Excessive number of criteria'}</td>
+              <td>{isKo
+                ? '한 수준에 10개 이상의 기준을 배치하면 비교 횟수가 45회 이상이 되어 응답 품질이 저하됩니다.'
+                : 'Placing more than 10 criteria at one level results in 45+ comparisons, degrading response quality.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '추상적 기준' : 'Vague criteria'}</td>
+              <td>{isKo
+                ? '"전반적 우수성"이나 "기타 요인"처럼 모호한 기준은 전문가의 판단을 어렵게 만듭니다.'
+                : 'Vague criteria like "overall excellence" or "other factors" make it difficult for experts to make judgments.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '목표와의 연결성 부족' : 'Weak connection to goal'}</td>
+              <td>{isKo
+                ? '기준이 최상위 목표와 논리적으로 연결되지 않으면 분석 결과의 실질적 의미가 줄어듭니다.'
+                : 'If criteria are not logically connected to the top-level goal, the practical significance of analysis results diminishes.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '독립성 위반 간과' : 'Overlooking independence violations'}</td>
+              <td>{isKo
+                ? '기준 간에 명백한 상호 영향이 있음에도 AHP를 적용하면, 결과의 신뢰성이 저하됩니다. 이 경우 ANP를 고려해야 합니다.'
+                : 'Applying AHP when there is obvious mutual influence among criteria undermines result reliability. In such cases, ANP should be considered.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <TipBox type="tip" title={isKo ? '효과적인 계층구조 구축 절차' : 'Effective Hierarchy Construction Procedure'}>
         <p>
@@ -827,13 +882,38 @@ function PaperWritingSection({ isKo }: { isKo: boolean }): ReactElement {
           ? 'AHP 연구 논문은 일반적인 학술 논문의 구조(서론-문헌검토-연구방법-분석결과-결론)를 따르되, AHP 특유의 요소들을 포함해야 합니다:'
           : 'AHP research papers follow the general academic paper structure (Introduction-Literature Review-Methodology-Results-Conclusion) while including AHP-specific elements:'}
       </p>
-      <ol>
-        <li><strong>{isKo ? '서론' : 'Introduction'}</strong> — {isKo ? '연구의 배경, 목적, AHP 적용의 필요성' : 'Research background, objectives, necessity of AHP application'}</li>
-        <li><strong>{isKo ? '이론적 배경 및 문헌검토' : 'Theoretical Background & Literature Review'}</strong> — {isKo ? 'AHP 이론 소개, 해당 분야의 AHP 선행연구 검토' : 'Introduction to AHP theory, review of prior AHP studies in the field'}</li>
-        <li><strong>{isKo ? '연구방법' : 'Methodology'}</strong> — {isKo ? '계층구조 설계, 기준 도출 과정, 설문 설계, 응답자 선정, 분석 방법' : 'Hierarchy design, criteria derivation process, questionnaire design, respondent selection, analysis method'}</li>
-        <li><strong>{isKo ? '분석 결과' : 'Results'}</strong> — {isKo ? '쌍대비교 행렬, 가중치, CR 값, 최종 우선순위, 민감도 분석' : 'Pairwise comparison matrices, weights, CR values, final priorities, sensitivity analysis'}</li>
-        <li><strong>{isKo ? '결론 및 시사점' : 'Conclusion & Implications'}</strong> — {isKo ? '핵심 발견, 학문적·실무적 시사점, 한계와 향후 과제' : 'Key findings, academic and practical implications, limitations and future research'}</li>
-      </ol>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '구성' : 'Section'}</th>
+              <th>{isKo ? '주요 내용' : 'Key Content'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '서론' : 'Introduction'}</td>
+              <td>{isKo ? '연구의 배경, 목적, AHP 적용의 필요성' : 'Research background, objectives, necessity of AHP application'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '이론적 배경 및 문헌검토' : 'Theoretical Background & Literature Review'}</td>
+              <td>{isKo ? 'AHP 이론 소개, 해당 분야의 AHP 선행연구 검토' : 'Introduction to AHP theory, review of prior AHP studies in the field'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '연구방법' : 'Methodology'}</td>
+              <td>{isKo ? '계층구조 설계, 기준 도출 과정, 설문 설계, 응답자 선정, 분석 방법' : 'Hierarchy design, criteria derivation process, questionnaire design, respondent selection, analysis method'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '분석 결과' : 'Results'}</td>
+              <td>{isKo ? '쌍대비교 행렬, 가중치, CR 값, 최종 우선순위, 민감도 분석' : 'Pairwise comparison matrices, weights, CR values, final priorities, sensitivity analysis'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '결론 및 시사점' : 'Conclusion & Implications'}</td>
+              <td>{isKo ? '핵심 발견, 학문적·실무적 시사점, 한계와 향후 과제' : 'Key findings, academic and practical implications, limitations and future research'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <h3>{isKo ? '계층구조 도표 제시 방법' : 'How to Present the Hierarchy Diagram'}</h3>
       <p>
@@ -958,38 +1038,48 @@ function PaperWritingSection({ isKo }: { isKo: boolean }): ReactElement {
           ? 'AHP 논문 심사에서 자주 받는 지적사항과 대응 방법입니다:'
           : 'Common criticisms in AHP paper reviews and how to address them:'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '"기준 도출 근거가 불충분하다"' : '"Insufficient basis for criteria derivation"'}</strong> —{' '}
-          {isKo
-            ? '문헌연구와 전문가 검증 과정을 상세히 기술하고, 기준 선정의 이론적 근거를 강화하세요.'
-            : 'Describe the literature review and expert validation process in detail, and strengthen the theoretical basis for criteria selection.'}
-        </li>
-        <li>
-          <strong>{isKo ? '"응답자 수가 부족하다"' : '"Insufficient number of respondents"'}</strong> —{' '}
-          {isKo
-            ? 'AHP는 전문가 패널 방법이므로, 응답자 수보다 전문성이 중요합니다. 그러나 10명 이상의 전문가 패널이 권장됩니다. 응답자의 전문성을 구체적으로 기술하세요.'
-            : 'Since AHP is an expert panel method, expertise is more important than the number of respondents. However, a panel of 10 or more experts is recommended. Describe respondents\' expertise in specific terms.'}
-        </li>
-        <li>
-          <strong>{isKo ? '"CR 보고가 누락되었다"' : '"CR reporting is missing"'}</strong> —{' '}
-          {isKo
-            ? '모든 쌍대비교 행렬의 CR을 반드시 보고하세요. CR > 0.1인 응답의 처리 방법도 명시해야 합니다.'
-            : 'Always report the CR for all pairwise comparison matrices. How responses with CR > 0.1 were handled must also be specified.'}
-        </li>
-        <li>
-          <strong>{isKo ? '"민감도 분석이 없다"' : '"No sensitivity analysis"'}</strong> —{' '}
-          {isKo
-            ? '민감도 분석을 반드시 포함하여 결과의 강건성을 보여주세요.'
-            : 'Always include sensitivity analysis to demonstrate the robustness of results.'}
-        </li>
-        <li>
-          <strong>{isKo ? '"AHP를 사용한 이유가 불명확하다"' : '"The reason for using AHP is unclear"'}</strong> —{' '}
-          {isKo
-            ? '다른 MCDM 기법 대비 AHP의 장점과 해당 연구에 적합한 이유를 명확히 기술하세요.'
-            : 'Clearly state the advantages of AHP over other MCDM techniques and why it is suitable for the specific study.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '심사 지적' : 'Review Comment'}</th>
+              <th>{isKo ? '대응 전략' : 'Response Strategy'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{isKo ? '"기준 도출 근거가 불충분하다"' : '"Insufficient basis for criteria derivation"'}</td>
+              <td>{isKo
+                ? '문헌연구와 전문가 검증 과정을 상세히 기술하고, 기준 선정의 이론적 근거를 강화하세요.'
+                : 'Describe the literature review and expert validation process in detail, and strengthen the theoretical basis for criteria selection.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '"응답자 수가 부족하다"' : '"Insufficient number of respondents"'}</td>
+              <td>{isKo
+                ? 'AHP는 전문가 패널 방법이므로, 응답자 수보다 전문성이 중요합니다. 그러나 10명 이상의 전문가 패널이 권장됩니다. 응답자의 전문성을 구체적으로 기술하세요.'
+                : 'Since AHP is an expert panel method, expertise is more important than the number of respondents. However, a panel of 10 or more experts is recommended. Describe respondents\' expertise in specific terms.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '"CR 보고가 누락되었다"' : '"CR reporting is missing"'}</td>
+              <td>{isKo
+                ? '모든 쌍대비교 행렬의 CR을 반드시 보고하세요. CR > 0.1인 응답의 처리 방법도 명시해야 합니다.'
+                : 'Always report the CR for all pairwise comparison matrices. How responses with CR > 0.1 were handled must also be specified.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '"민감도 분석이 없다"' : '"No sensitivity analysis"'}</td>
+              <td>{isKo
+                ? '민감도 분석을 반드시 포함하여 결과의 강건성을 보여주세요.'
+                : 'Always include sensitivity analysis to demonstrate the robustness of results.'}</td>
+            </tr>
+            <tr>
+              <td>{isKo ? '"AHP를 사용한 이유가 불명확하다"' : '"The reason for using AHP is unclear"'}</td>
+              <td>{isKo
+                ? '다른 MCDM 기법 대비 AHP의 장점과 해당 연구에 적합한 이유를 명확히 기술하세요.'
+                : 'Clearly state the advantages of AHP over other MCDM techniques and why it is suitable for the specific study.'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <TipBox type="important" title={isKo ? '논문의 완성도를 높이는 체크리스트' : 'Checklist for Improving Paper Quality'}>
         <p>

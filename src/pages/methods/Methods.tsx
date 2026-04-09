@@ -53,26 +53,34 @@ function OverviewSection({ isKo }: { isKo: boolean }): ReactElement {
           ? '연구 패러다임은 연구자의 세계관(worldview)을 반영하며, 존재론(ontology), 인식론(epistemology), 방법론(methodology)에 대한 기본 가정의 체계입니다. 어떤 패러다임을 채택하느냐에 따라 연구의 전체적인 방향과 접근 방식이 결정됩니다.'
           : 'Research paradigms reflect the researcher\'s worldview and constitute a system of fundamental assumptions about ontology, epistemology, and methodology. The paradigm adopted determines the overall direction and approach of research.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '실증주의 (Positivism)' : 'Positivism'}:</strong>{' '}
-          {isKo
-            ? '객관적이고 측정 가능한 현실이 존재한다고 가정합니다. 연구자는 관찰자로서 가설을 설정하고 경험적 자료를 통해 검증합니다. 양적연구의 철학적 토대가 되며, 일반화 가능한 법칙을 발견하는 것을 목표로 합니다. 연역적 접근을 취하며, 변수 간 인과관계를 규명하고자 합니다.'
-            : 'Assumes that an objective, measurable reality exists. The researcher, as an observer, formulates hypotheses and tests them through empirical data. It serves as the philosophical foundation for quantitative research and aims to discover generalizable laws. It takes a deductive approach and seeks to identify causal relationships between variables.'}
-        </li>
-        <li>
-          <strong>{isKo ? '해석주의 (Interpretivism)' : 'Interpretivism'}:</strong>{' '}
-          {isKo
-            ? '현실은 사회적으로 구성되며, 개인의 주관적 경험과 해석에 따라 다양하게 존재한다고 봅니다. 연구자는 참여자의 관점에서 현상의 의미를 이해하고자 합니다. 질적연구의 철학적 토대가 되며, 귀납적 접근을 통해 깊이 있는 이해를 추구합니다. 맥락(context)의 중요성을 강조하며, 연구자와 참여자 간의 상호작용을 인정합니다.'
-            : 'Views reality as socially constructed and existing in multiple forms depending on individuals\' subjective experiences and interpretations. The researcher seeks to understand the meaning of phenomena from the participant\'s perspective. It forms the philosophical foundation for qualitative research and pursues deep understanding through an inductive approach. It emphasizes the importance of context and acknowledges the interaction between researcher and participant.'}
-        </li>
-        <li>
-          <strong>{isKo ? '실용주의 (Pragmatism)' : 'Pragmatism'}:</strong>{' '}
-          {isKo
-            ? '연구 문제를 해결하는 데 가장 효과적인 방법을 선택하는 것이 중요하다고 봅니다. 특정 철학적 입장에 구속되지 않으며, 양적 방법과 질적 방법을 모두 활용할 수 있습니다. 혼합연구방법의 철학적 토대가 되며, 연구 질문에 가장 적합한 방법을 유연하게 선택합니다. Tashakkori와 Teddlie(2010)는 실용주의가 혼합연구의 가장 적절한 철학적 기반이라고 주장합니다.'
-            : 'Holds that what matters most is choosing the most effective method for solving the research problem. It is not bound to a specific philosophical stance and can utilize both quantitative and qualitative methods. It serves as the philosophical foundation for mixed methods research and flexibly selects the most appropriate method for the research question. Tashakkori and Teddlie (2010) argue that pragmatism is the most appropriate philosophical basis for mixed methods research.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '패러다임' : 'Paradigm'}</th>
+              <th>{isKo ? '핵심 가정' : 'Core Assumptions'}</th>
+              <th>{isKo ? '연구 접근' : 'Research Approach'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>{isKo ? '실증주의' : 'Positivism'}</strong></td>
+              <td>{isKo ? '객관적이고 측정 가능한 현실이 존재' : 'Objective, measurable reality exists'}</td>
+              <td>{isKo ? '양적연구, 연역적 접근, 변수 간 인과관계 규명' : 'Quantitative, deductive, causal relationships'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '해석주의' : 'Interpretivism'}</strong></td>
+              <td>{isKo ? '현실은 사회적으로 구성, 주관적 경험에 따라 다양' : 'Reality is socially constructed, varies by experience'}</td>
+              <td>{isKo ? '질적연구, 귀납적 접근, 맥락 속 의미 이해' : 'Qualitative, inductive, contextual understanding'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '실용주의' : 'Pragmatism'}</strong></td>
+              <td>{isKo ? '연구 문제 해결에 가장 효과적인 방법 선택' : 'Choose the most effective method for the problem'}</td>
+              <td>{isKo ? '혼합연구, 유연한 방법 결합' : 'Mixed methods, flexible combination'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <TipBox type="tip" title={isKo ? '패러다임 선택의 중요성' : 'Importance of Paradigm Selection'}>
         <p>
@@ -117,73 +125,56 @@ function QuantQualSection({ isKo }: { isKo: boolean }): ReactElement {
         {isKo ? '양적연구 vs 질적연구' : 'Quantitative vs Qualitative'}
       </h2>
 
-      {/* Quantitative research */}
-      <h3>{isKo ? '양적연구의 특성 (Quantitative Research)' : 'Characteristics of Quantitative Research'}</h3>
+      {/* Quantitative vs Qualitative comparison table */}
+      <h3>{isKo ? '양적연구와 질적연구 비교' : 'Quantitative vs Qualitative Comparison'}</h3>
       <p>
         {isKo
-          ? '양적연구(quantitative research)는 수치 데이터를 수집하고 통계적 방법을 사용하여 변수 간의 관계를 분석하는 연구 접근법입니다. 실증주의 패러다임에 기반하며, 가설 검증, 일반화, 객관성을 강조합니다. 연구 설계가 사전에 엄격하게 구조화되며, 표준화된 측정 도구를 사용하여 자료를 수집합니다.'
-          : 'Quantitative research is a research approach that collects numerical data and uses statistical methods to analyze relationships between variables. Based on the positivist paradigm, it emphasizes hypothesis testing, generalization, and objectivity. The research design is rigorously structured in advance, and data are collected using standardized measurement instruments.'}
+          ? '양적연구와 질적연구는 서로 다른 철학적 패러다임에 기반하며, 각각 고유한 목적, 자료 수집 방법, 분석 기법을 가지고 있습니다.'
+          : 'Quantitative and qualitative research are based on different philosophical paradigms, each with distinct purposes, data collection methods, and analytical techniques.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '목적' : 'Purpose'}:</strong>{' '}
-          {isKo
-            ? '변수 간의 관계 규명, 인과관계 검증, 현상의 빈도와 분포 파악, 일반화 가능한 결론 도출'
-            : 'Identifying relationships between variables, verifying causal relationships, determining frequency and distribution of phenomena, drawing generalizable conclusions'}
-        </li>
-        <li>
-          <strong>{isKo ? '자료 수집' : 'Data Collection'}:</strong>{' '}
-          {isKo
-            ? '설문조사(survey), 실험(experiment), 이차 자료 분석(secondary data analysis), 체계적 관찰(systematic observation)'
-            : 'Surveys, experiments, secondary data analysis, systematic observation'}
-        </li>
-        <li>
-          <strong>{isKo ? '분석 방법' : 'Analysis Methods'}:</strong>{' '}
-          {isKo
-            ? '기술통계, t-검정, ANOVA, 회귀분석, 구조방정식 모형(SEM), 다층 모형(HLM) 등'
-            : 'Descriptive statistics, t-tests, ANOVA, regression analysis, structural equation modeling (SEM), hierarchical linear modeling (HLM), etc.'}
-        </li>
-        <li>
-          <strong>{isKo ? '표본' : 'Sample'}:</strong>{' '}
-          {isKo
-            ? '대규모 표본(일반적으로 100명 이상), 확률적 표본추출을 통해 모집단 대표성 확보'
-            : 'Large samples (typically 100 or more), probability sampling to ensure population representativeness'}
-        </li>
-      </ul>
-
-      {/* Qualitative research */}
-      <h3>{isKo ? '질적연구의 특성 (Qualitative Research)' : 'Characteristics of Qualitative Research'}</h3>
-      <p>
-        {isKo
-          ? '질적연구(qualitative research)는 참여자의 경험, 관점, 의미를 깊이 있게 탐구하는 연구 접근법입니다. 해석주의 패러다임에 기반하며, 맥락 속에서 현상을 이해하고, 풍부한 기술(thick description)을 통해 연구 결과를 제시합니다. 연구 설계가 유연하며, 자료 수집 과정에서 점진적으로 연구 방향이 구체화됩니다.'
-          : 'Qualitative research is a research approach that deeply explores participants\' experiences, perspectives, and meanings. Based on the interpretivist paradigm, it seeks to understand phenomena within their context and presents findings through thick description. The research design is flexible, and the research direction becomes progressively more specific during data collection.'}
-      </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '목적' : 'Purpose'}:</strong>{' '}
-          {isKo
-            ? '현상의 의미와 본질 탐구, 과정과 맥락 이해, 참여자 관점에서의 경험 해석, 새로운 이론 생성'
-            : 'Exploring meaning and essence of phenomena, understanding processes and contexts, interpreting experiences from the participant perspective, generating new theory'}
-        </li>
-        <li>
-          <strong>{isKo ? '자료 수집' : 'Data Collection'}:</strong>{' '}
-          {isKo
-            ? '심층 인터뷰(in-depth interview), 참여관찰(participant observation), 포커스 그룹(focus group), 문서 분석(document analysis)'
-            : 'In-depth interviews, participant observation, focus groups, document analysis'}
-        </li>
-        <li>
-          <strong>{isKo ? '분석 방법' : 'Analysis Methods'}:</strong>{' '}
-          {isKo
-            ? '주제 분석(thematic analysis), 근거이론(grounded theory), 내러티브 분석(narrative analysis), 현상학적 분석(phenomenological analysis), 담론 분석(discourse analysis)'
-            : 'Thematic analysis, grounded theory, narrative analysis, phenomenological analysis, discourse analysis'}
-        </li>
-        <li>
-          <strong>{isKo ? '표본' : 'Sample'}:</strong>{' '}
-          {isKo
-            ? '소규모 표본(일반적으로 5~30명), 목적적 표본추출(purposive sampling)을 통해 정보가 풍부한 사례 선정'
-            : 'Small samples (typically 5-30), purposive sampling to select information-rich cases'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '차원' : 'Dimension'}</th>
+              <th>{isKo ? '양적연구' : 'Quantitative'}</th>
+              <th>{isKo ? '질적연구' : 'Qualitative'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>{isKo ? '목적' : 'Purpose'}</strong></td>
+              <td>{isKo ? '변수 간 관계 규명, 인과관계 검증, 일반화 가능한 결론 도출' : 'Identify variable relationships, verify causality, draw generalizable conclusions'}</td>
+              <td>{isKo ? '현상의 의미와 본질 탐구, 맥락 이해, 새로운 이론 생성' : 'Explore meaning and essence, understand context, generate new theory'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '자료 수집' : 'Data Collection'}</strong></td>
+              <td>{isKo ? '설문조사, 실험, 이차 자료 분석, 체계적 관찰' : 'Surveys, experiments, secondary data analysis, systematic observation'}</td>
+              <td>{isKo ? '심층 인터뷰, 참여관찰, 포커스 그룹, 문서 분석' : 'In-depth interviews, participant observation, focus groups, document analysis'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '분석 방법' : 'Analysis'}</strong></td>
+              <td>{isKo ? '기술통계, t-검정, ANOVA, 회귀분석, SEM, HLM' : 'Descriptive stats, t-tests, ANOVA, regression, SEM, HLM'}</td>
+              <td>{isKo ? '주제 분석, 근거이론, 내러티브 분석, 현상학적 분석, 담론 분석' : 'Thematic, grounded theory, narrative, phenomenological, discourse analysis'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '표본' : 'Sample'}</strong></td>
+              <td>{isKo ? '대규모 (100명 이상), 확률적 표본추출' : 'Large (100+), probability sampling'}</td>
+              <td>{isKo ? '소규모 (5~30명), 목적적 표본추출' : 'Small (5-30), purposive sampling'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '설계' : 'Design'}</strong></td>
+              <td>{isKo ? '사전에 엄격하게 구조화' : 'Rigorously structured in advance'}</td>
+              <td>{isKo ? '유연, 자료 수집 과정에서 점진적 구체화' : 'Flexible, progressively refined during data collection'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '추구 가치' : 'Focus'}</strong></td>
+              <td>{isKo ? '넓이(breadth), 객관성, 일반화' : 'Breadth, objectivity, generalization'}</td>
+              <td>{isKo ? '깊이(depth), 맥락적 이해, 풍부한 기술' : 'Depth, contextual understanding, thick description'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       {/* Key differences */}
       <h3>{isKo ? '양적연구와 질적연구의 핵심 차이' : 'Key Differences Between Quantitative and Qualitative Research'}</h3>
@@ -320,20 +311,32 @@ function DesignTypesSection({ isKo }: { isKo: boolean }): ReactElement {
           ? '비실험 설계(non-experimental design)는 독립변수를 조작하지 않고, 이미 존재하는 변수의 특성이나 관계를 조사하는 설계입니다. 설문조사 연구(survey research)가 대표적이며, 횡단적 설계(cross-sectional design)와 종단적 설계(longitudinal design)로 나뉩니다.'
           : 'Non-experimental design investigates the characteristics or relationships of variables as they naturally exist, without manipulating the independent variable. Survey research is the most representative type, and it is divided into cross-sectional design and longitudinal design.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '횡단적 설계 (Cross-sectional)' : 'Cross-sectional Design'}:</strong>{' '}
-          {isKo
-            ? '한 시점에서 자료를 수집합니다. 비용이 적고 신속하지만, 변수 간의 인과관계를 추론하기 어렵습니다. 시간적 선행성을 확인할 수 없기 때문입니다.'
-            : 'Data are collected at a single point in time. It is cost-effective and quick, but it is difficult to infer causal relationships between variables because temporal precedence cannot be established.'}
-        </li>
-        <li>
-          <strong>{isKo ? '종단적 설계 (Longitudinal)' : 'Longitudinal Design'}:</strong>{' '}
-          {isKo
-            ? '동일한 대상을 여러 시점에 걸쳐 반복 측정합니다. 패널 연구(panel study), 추세 연구(trend study), 코호트 연구(cohort study)로 구분됩니다. 시간에 따른 변화를 관찰할 수 있어 인과 추론에 유리하지만, 시간과 비용이 많이 소요되고 참여자 탈락(attrition)의 문제가 있습니다.'
-            : 'Repeatedly measures the same subjects over multiple time points. It is classified into panel studies, trend studies, and cohort studies. It allows observation of changes over time, which is advantageous for causal inference, but requires substantial time and cost and faces participant attrition issues.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '설계' : 'Design'}</th>
+              <th>{isKo ? '특징' : 'Characteristics'}</th>
+              <th>{isKo ? '장점' : 'Advantages'}</th>
+              <th>{isKo ? '한계' : 'Limitations'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>{isKo ? '횡단적 설계' : 'Cross-sectional'}</strong></td>
+              <td>{isKo ? '한 시점에서 자료 수집' : 'Data collected at a single point'}</td>
+              <td>{isKo ? '비용 절감, 신속한 수행' : 'Cost-effective, quick'}</td>
+              <td>{isKo ? '인과관계 추론 어려움 (시간적 선행성 확인 불가)' : 'Difficult to infer causality (no temporal precedence)'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '종단적 설계' : 'Longitudinal'}</strong></td>
+              <td>{isKo ? '여러 시점 반복 측정 (패널/추세/코호트)' : 'Repeated measures over time (panel/trend/cohort)'}</td>
+              <td>{isKo ? '시간에 따른 변화 관찰, 인과 추론에 유리' : 'Observe change over time, better for causal inference'}</td>
+              <td>{isKo ? '높은 비용, 긴 소요 시간, 참여자 탈락' : 'High cost, time-consuming, participant attrition'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       {/* Design selection */}
       <h3>{isKo ? '연구설계 선택 시 고려사항' : 'Considerations When Selecting a Research Design'}</h3>
@@ -372,38 +375,44 @@ function VariablesSection({ isKo }: { isKo: boolean }): ReactElement {
           ? '변수(variable)는 연구에서 측정하거나 조작하는 특성으로, 둘 이상의 값을 가질 수 있는 속성입니다. 연구에서 변수의 역할을 정확히 이해하고 구분하는 것은 연구 설계와 분석의 핵심입니다.'
           : 'A variable is a characteristic that is measured or manipulated in research, an attribute that can take on two or more values. Accurately understanding and distinguishing the roles of variables in research is central to research design and analysis.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '독립변수 (Independent Variable, IV)' : 'Independent Variable (IV)'}:</strong>{' '}
-          {isKo
-            ? '다른 변수에 영향을 미치는 것으로 가정되는 원인 변수입니다. 실험연구에서는 연구자가 의도적으로 조작하며, 비실험연구에서는 이미 존재하는 특성(예: 성별, 리더십 유형)을 독립변수로 설정합니다. 예를 들어, "교수법이 학업 성취도에 미치는 영향" 연구에서 교수법이 독립변수입니다.'
-            : 'A causal variable assumed to influence other variables. In experimental research, the researcher deliberately manipulates it; in non-experimental research, already existing characteristics (e.g., gender, leadership type) are designated as independent variables. For example, in a study of "the effect of teaching methods on academic achievement," the teaching method is the independent variable.'}
-        </li>
-        <li>
-          <strong>{isKo ? '종속변수 (Dependent Variable, DV)' : 'Dependent Variable (DV)'}:</strong>{' '}
-          {isKo
-            ? '독립변수의 영향을 받는 것으로 가정되는 결과 변수입니다. 연구의 핵심 관심사이며, 독립변수의 변화에 따라 어떻게 변하는지를 측정합니다. 위의 예에서 학업 성취도가 종속변수입니다. 종속변수는 신뢰도와 타당도가 확보된 측정 도구로 측정해야 합니다.'
-            : 'An outcome variable assumed to be affected by the independent variable. It is the central focus of the study, and how it changes in response to variations in the independent variable is measured. In the above example, academic achievement is the dependent variable. Dependent variables must be measured with instruments that have established reliability and validity.'}
-        </li>
-        <li>
-          <strong>{isKo ? '매개변수 (Mediator Variable)' : 'Mediator Variable'}:</strong>{' '}
-          {isKo
-            ? '독립변수가 종속변수에 영향을 미치는 과정(메커니즘)을 설명하는 변수입니다. "왜" 또는 "어떻게" 효과가 발생하는지를 밝힙니다. 예를 들어, "변혁적 리더십(IV) -> 심리적 임파워먼트(매개) -> 직무 성과(DV)"에서 심리적 임파워먼트는 리더십이 성과에 영향을 미치는 메커니즘을 설명합니다. Baron과 Kenny(1986)의 매개효과 검증 절차나 부트스트래핑 방법으로 검증합니다.'
-            : 'A variable that explains the process (mechanism) through which the independent variable affects the dependent variable. It reveals "why" or "how" the effect occurs. For example, in "transformational leadership (IV) -> psychological empowerment (mediator) -> job performance (DV)," psychological empowerment explains the mechanism by which leadership affects performance. It is tested using Baron and Kenny\'s (1986) mediation testing procedure or bootstrapping methods.'}
-        </li>
-        <li>
-          <strong>{isKo ? '조절변수 (Moderator Variable)' : 'Moderator Variable'}:</strong>{' '}
-          {isKo
-            ? '독립변수와 종속변수 간 관계의 강도나 방향을 변화시키는 변수입니다. "어떤 조건에서" 효과가 강해지거나 약해지는지를 밝힙니다. 예를 들어, "업무 스트레스(IV)가 소진(DV)에 미치는 영향에서 사회적 지지(조절)의 역할" 연구에서, 사회적 지지가 높은 집단은 스트레스가 소진에 미치는 영향이 약화될 수 있습니다. 상호작용 효과(interaction effect)로 분석합니다.'
-            : 'A variable that changes the strength or direction of the relationship between independent and dependent variables. It reveals "under what conditions" the effect becomes stronger or weaker. For example, in a study of "the role of social support (moderator) in the effect of work stress (IV) on burnout (DV)," the effect of stress on burnout may be weakened in groups with high social support. It is analyzed through interaction effects.'}
-        </li>
-        <li>
-          <strong>{isKo ? '통제변수 (Control Variable)' : 'Control Variable'}:</strong>{' '}
-          {isKo
-            ? '연구 결과에 영향을 미칠 수 있지만, 연구의 주된 관심사가 아닌 변수입니다. 이러한 변수의 효과를 통제함으로써 독립변수의 순수한 효과를 추정합니다. 인구통계학적 변수(성별, 연령, 학력, 근속연수 등)가 대표적인 통제변수입니다. 통계 분석에서 공변량(covariate)으로 투입하여 그 영향을 제거합니다.'
-            : 'Variables that may affect research results but are not the primary focus of the study. By controlling their effects, the pure effect of the independent variable can be estimated. Demographic variables (gender, age, education level, tenure, etc.) are representative control variables. They are entered as covariates in statistical analysis to remove their influence.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '변수 유형' : 'Variable Type'}</th>
+              <th>{isKo ? '역할' : 'Role'}</th>
+              <th>{isKo ? '예시' : 'Example'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>{isKo ? '독립변수 (IV)' : 'Independent (IV)'}</strong></td>
+              <td>{isKo ? '원인 변수. 실험에서 조작하거나, 비실험에서 기존 특성 설정' : 'Causal variable. Manipulated in experiments or set as existing characteristics'}</td>
+              <td>{isKo ? '교수법, 리더십 유형, 성별' : 'Teaching method, leadership type, gender'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '종속변수 (DV)' : 'Dependent (DV)'}</strong></td>
+              <td>{isKo ? '결과 변수. IV의 영향을 받는 핵심 관심사' : 'Outcome variable. Core focus affected by IV'}</td>
+              <td>{isKo ? '학업 성취도, 직무 성과' : 'Academic achievement, job performance'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '매개변수' : 'Mediator'}</strong></td>
+              <td>{isKo ? 'IV→DV 메커니즘 설명. "왜/어떻게" 효과 발생' : 'Explains IV→DV mechanism. "Why/how" effect occurs'}</td>
+              <td>{isKo ? '리더십→심리적 임파워먼트→성과' : 'Leadership→Empowerment→Performance'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '조절변수' : 'Moderator'}</strong></td>
+              <td>{isKo ? 'IV→DV 관계의 강도/방향 변화. "어떤 조건에서"' : 'Changes strength/direction of IV→DV. "Under what conditions"'}</td>
+              <td>{isKo ? '사회적 지지가 높으면 스트레스→소진 약화' : 'High social support weakens stress→burnout'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '통제변수' : 'Control'}</strong></td>
+              <td>{isKo ? '결과에 영향 가능하나 주 관심사 아님. 공변량으로 통제' : 'May affect results but not main focus. Controlled as covariate'}</td>
+              <td>{isKo ? '성별, 연령, 학력, 근속연수' : 'Gender, age, education, tenure'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       {/* Operational definitions */}
       <h3>{isKo ? '조작적 정의 (Operational Definitions)' : 'Operational Definitions'}</h3>
@@ -425,32 +434,44 @@ function VariablesSection({ isKo }: { isKo: boolean }): ReactElement {
           ? '변수의 측정 수준은 적절한 통계 분석 방법을 선택하는 데 핵심적인 역할을 합니다. Stevens(1946)의 분류에 따라 네 가지 측정 수준이 있습니다.'
           : 'The measurement level of variables plays a critical role in selecting appropriate statistical analysis methods. According to Stevens\' (1946) classification, there are four measurement levels.'}
       </p>
-      <ul>
-        <li>
-          <strong>{isKo ? '명목 척도 (Nominal)' : 'Nominal Scale'}:</strong>{' '}
-          {isKo
-            ? '범주를 구분하는 데만 사용됩니다. 수학적 연산이 의미 없으며, 빈도와 최빈값만 계산 가능합니다. 예: 성별(남/여), 종교, 거주 지역.'
-            : 'Used only to distinguish categories. Mathematical operations are meaningless, and only frequency and mode can be calculated. Examples: gender (male/female), religion, residential area.'}
-        </li>
-        <li>
-          <strong>{isKo ? '서열 척도 (Ordinal)' : 'Ordinal Scale'}:</strong>{' '}
-          {isKo
-            ? '범주 간 순서(서열)가 존재하지만, 간격이 동일하다고 가정할 수 없습니다. 중앙값과 비모수 검정을 사용합니다. 예: 교육 수준(초졸, 중졸, 고졸, 대졸), 만족도 순위.'
-            : 'Categories have an order (rank), but equal intervals cannot be assumed. Median and non-parametric tests are used. Examples: education level (elementary, middle, high school, college), satisfaction ranking.'}
-        </li>
-        <li>
-          <strong>{isKo ? '등간 척도 (Interval)' : 'Interval Scale'}:</strong>{' '}
-          {isKo
-            ? '범주 간 간격이 동일하지만, 절대 영점(true zero)이 없습니다. 평균, 표준편차 등 대부분의 통계 분석이 가능합니다. 예: 온도(섭씨), 리커트 척도(관례적으로 등간으로 취급).'
-            : 'Intervals between categories are equal, but there is no true zero point. Most statistical analyses including mean and standard deviation are possible. Examples: temperature (Celsius), Likert scales (conventionally treated as interval).'}
-        </li>
-        <li>
-          <strong>{isKo ? '비율 척도 (Ratio)' : 'Ratio Scale'}:</strong>{' '}
-          {isKo
-            ? '등간 척도의 특성에 절대 영점이 추가됩니다. 모든 수학적 연산이 가능합니다. 예: 연령, 소득, 체중, 시간.'
-            : 'Has all the properties of interval scale plus a true zero point. All mathematical operations are possible. Examples: age, income, weight, time.'}
-        </li>
-      </ul>
+      <div className="table-responsive">
+        <table className="guide-table">
+          <thead>
+            <tr>
+              <th>{isKo ? '측정 수준' : 'Scale'}</th>
+              <th>{isKo ? '특성' : 'Properties'}</th>
+              <th>{isKo ? '가능한 통계' : 'Statistics'}</th>
+              <th>{isKo ? '예시' : 'Examples'}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>{isKo ? '명목' : 'Nominal'}</strong></td>
+              <td>{isKo ? '범주 구분만 가능' : 'Category distinction only'}</td>
+              <td>{isKo ? '빈도, 최빈값' : 'Frequency, mode'}</td>
+              <td>{isKo ? '성별, 종교, 거주 지역' : 'Gender, religion, area'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '서열' : 'Ordinal'}</strong></td>
+              <td>{isKo ? '순서 있으나 간격 불균등' : 'Ordered but unequal intervals'}</td>
+              <td>{isKo ? '중앙값, 비모수 검정' : 'Median, non-parametric tests'}</td>
+              <td>{isKo ? '교육 수준, 만족도 순위' : 'Education level, satisfaction rank'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '등간' : 'Interval'}</strong></td>
+              <td>{isKo ? '균등 간격, 절대 영점 없음' : 'Equal intervals, no true zero'}</td>
+              <td>{isKo ? '평균, 표준편차, 모수 검정' : 'Mean, SD, parametric tests'}</td>
+              <td>{isKo ? '온도(℃), 리커트 척도' : 'Temperature (℃), Likert scale'}</td>
+            </tr>
+            <tr>
+              <td><strong>{isKo ? '비율' : 'Ratio'}</strong></td>
+              <td>{isKo ? '균등 간격 + 절대 영점' : 'Equal intervals + true zero'}</td>
+              <td>{isKo ? '모든 수학적 연산' : 'All mathematical operations'}</td>
+              <td>{isKo ? '연령, 소득, 체중, 시간' : 'Age, income, weight, time'}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
       <TipBox type="tip" title={isKo ? '리커트 척도의 측정 수준 논쟁' : 'The Measurement Level Debate on Likert Scales'}>
         <p>
