@@ -6,6 +6,63 @@
 
 ---
 
+## 2025-04-09 — 연구방법 아코디언 사이드바 + 드롭다운 내비게이션
+
+### 개요
+
+연구방법 관련 4개 페이지(연구방법, 양적연구방법, 질적연구방법, AHP)에 **공유 아코디언 사이드바**를 도입하고, 상단 네비게이션에 **드롭다운 메뉴**를 적용하여 페이지 간 이동 편의성을 대폭 개선.
+
+### 주요 변경 사항
+
+#### 1. MethodsSidebar 아코디언 컴포넌트 (`src/components/MethodsSidebar.tsx`)
+
+| 기능 | 설명 |
+|------|------|
+| 4개 그룹 아코디언 | 연구방법 / 양적연구방법 / 질적연구방법 / AHP연구방법론 |
+| 배타적 토글 | 하나 열면 나머지 자동 닫힘 |
+| 현재 페이지 그룹 | 섹션 클릭 → 페이지 내 스크롤 이동 |
+| 타 페이지 그룹 | 클릭 → React Router 라우팅 |
+| 컬러 도트 | 각 그룹별 고유 색상 표시 |
+
+#### 2. Navbar 드롭다운 메뉴 확장
+
+- "연구방법" 상단 메뉴에 4개 드롭다운 항목 배치
+  - 연구방법 (`/methods`)
+  - 양적연구 (`/quantitative-methods`)
+  - 질적연구방법 (`/qualitative-methods`)
+  - AHP (`/ahp`)
+- 데스크톱: hover 시 드롭다운 표시
+- 모바일: 토글 버튼으로 하위 메뉴 펼침/접힘
+
+#### 3. CSS 스타일 추가
+
+| 파일 | 변경 |
+|------|------|
+| `src/styles/guide-pages.css` | `.methods-acc-*` 아코디언 스타일 117줄 추가 (다크모드 포함) |
+| `src/styles/navbar.css` | 드롭다운 CSS (`.nav-dropdown`, `.nav-dropdown-link`, 모바일 드롭다운) |
+| `src/styles/dark-mode.css` | 드롭다운 다크모드 스타일 |
+
+### 수정된 파일 (7개)
+
+| 파일 | 변경 내용 |
+|------|-----------|
+| `src/components/MethodsSidebar.tsx` | **신규** — 공유 아코디언 사이드바 컴포넌트 (151줄) |
+| `src/components/layout/Navbar.tsx` | 드롭다운에 연구방법 포함 4개 항목으로 확장 |
+| `src/pages/methods/Methods.tsx` | 기존 사이드바 → `<MethodsSidebar />` 교체 |
+| `src/pages/quantitative-methods/QuantitativeMethods.tsx` | 기존 사이드바 → `<MethodsSidebar />` 교체 |
+| `src/pages/qualitative-methods/QualitativeMethods.tsx` | 기존 사이드바 → `<MethodsSidebar />` 교체 |
+| `src/pages/ahp/Ahp.tsx` | 기존 사이드바 → `<MethodsSidebar />` 교체 |
+| `src/styles/guide-pages.css` | 아코디언 CSS + 다크모드 스타일 추가 |
+
+### 커밋 이력
+
+| 해시 | 메시지 |
+|------|--------|
+| `d24a888` | feat: 연구방법 메뉴에 드롭다운 하위 메뉴 추가 |
+| `1b19e26` | feat: 연구방법 4개 페이지에 공유 아코디언 사이드바 추가 |
+
+---
+
 ## 2025-04-09 — /methods 하위 3개 방법론 페이지 추가
 
 ### 개요
