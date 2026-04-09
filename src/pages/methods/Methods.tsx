@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../contexts/LanguageContext';
 import SEOHead from '../../components/SEOHead';
 import TipBox from '../../components/TipBox';
+import MethodsSidebar from '../../components/MethodsSidebar';
 import type { ReactElement } from 'react';
 
 const SUB_PATHS = [
@@ -617,22 +618,7 @@ export default function Methods(): ReactElement {
       />
       <div className="guide-page">
         <div className="guide-layout">
-          <aside className="guide-sidebar">
-            <div className="guide-sidebar-title">{isKo ? '목차' : 'Contents'}</div>
-            <ul className="guide-nav">
-              {SECTIONS.map((section) => (
-                <li key={section.id} className="guide-nav-item">
-                  <button
-                    className={`guide-nav-link ${activeSection === section.id ? 'active' : ''}`}
-                    onClick={() => handleNavClick(section.id)}
-                  >
-                    <i className={`fa-solid ${section.icon}`} />
-                    <span>{isKo ? section.ko : section.en}</span>
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </aside>
+          <MethodsSidebar activeSection={activeSection} onSectionClick={handleNavClick} isKo={isKo} />
           <main className="guide-content">
             {activeSection === 'overview' && <OverviewSection isKo={isKo} />}
             {activeSection === 'quant-qual' && <QuantQualSection isKo={isKo} />}

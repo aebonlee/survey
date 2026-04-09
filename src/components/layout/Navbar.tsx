@@ -18,6 +18,7 @@ const NAV_ITEMS: NavItem[] = [
   {
     path: '/methods', ko: '연구방법', en: 'Methods',
     children: [
+      { path: '/methods', ko: '연구방법', en: 'Methods' },
       { path: '/quantitative-methods', ko: '양적연구', en: 'Quantitative' },
       { path: '/qualitative-methods', ko: '질적연구방법', en: 'Qual Methods' },
       { path: '/ahp', ko: 'AHP', en: 'AHP' },

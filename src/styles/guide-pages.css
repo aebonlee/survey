@@ -260,3 +260,120 @@ html[data-theme="dark"] .comparison-table tbody tr:hover td {
 html[data-theme="dark"] .comparison-table-wrapper {
     border-color: var(--border-light);
 }
+
+/* ── Methods Accordion Sidebar ── */
+.methods-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.methods-acc-group {
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+}
+.methods-acc-group.current {
+    background: rgba(5, 150, 105, 0.04);
+}
+.methods-acc-header {
+    position: relative;
+}
+.methods-acc-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: inherit;
+    text-decoration: none;
+    text-align: left;
+}
+.methods-acc-toggle:hover {
+    background: var(--bg-medium-gray);
+    color: var(--text-primary);
+}
+.methods-acc-group.current .methods-acc-toggle {
+    color: var(--primary);
+}
+.methods-acc-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+.methods-acc-label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.methods-acc-arrow {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+    flex-shrink: 0;
+    color: var(--text-light);
+}
+.methods-acc-toggle.open .methods-acc-arrow {
+    transform: rotate(180deg);
+}
+.methods-acc-sections {
+    list-style: none;
+    padding: 0 0 4px 18px;
+    margin: 0;
+    border-left: 2px solid var(--border-light);
+    margin-left: 15px;
+}
+.methods-acc-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: var(--transition-base);
+    font-family: inherit;
+    text-decoration: none;
+    text-align: left;
+}
+.methods-acc-link:hover {
+    background: var(--bg-medium-gray);
+    color: var(--text-primary);
+}
+.methods-acc-link.active {
+    background: var(--primary);
+    color: var(--text-white);
+    font-weight: 600;
+}
+.methods-acc-link i {
+    font-size: 13px;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+/* Dark mode accordion */
+html[data-theme="dark"] .methods-acc-group.current {
+    background: rgba(5, 150, 105, 0.08);
+}
+html[data-theme="dark"] .methods-acc-toggle:hover {
+    background: #2A2A3E;
+}
+html[data-theme="dark"] .methods-acc-link:hover {
+    background: #2A2A3E;
+}
+html[data-theme="dark"] .methods-acc-sections {
+    border-left-color: #3E3E52;
+}
