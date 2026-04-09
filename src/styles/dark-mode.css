@@ -31,6 +31,14 @@ html[data-theme="dark"] .navbar.scrolled {
 html[data-theme="dark"] .color-picker-dropdown {
     background: rgba(26, 26, 46, 0.95);
 }
+html[data-theme="dark"] .nav-dropdown {
+    background: rgba(26, 26, 46, 0.98);
+    border-color: var(--border-light);
+}
+html[data-theme="dark"] .nav-dropdown-link:hover,
+html[data-theme="dark"] .nav-dropdown-link.active {
+    background: rgba(255, 255, 255, 0.06);
+}
 
 /* Buttons */
 html[data-theme="dark"] .btn-primary-large {

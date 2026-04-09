@@ -5,19 +5,32 @@ import { useLanguage } from '../../contexts/LanguageContext';
 import { useAuth } from '../../contexts/AuthContext';
 import type { ReactElement } from 'react';
 
-const NAV_ITEMS = [
+interface NavItem {
+  path: string;
+  ko: string;
+  en: string;
+  children?: { path: string; ko: string; en: string }[];
+}
+
+const NAV_ITEMS: NavItem[] = [
   { path: '/proposal', ko: '연구계획서', en: 'Proposal' },
   { path: '/literature', ko: '문헌검토', en: 'Literature' },
-  { path: '/methods', ko: '연구방법', en: 'Methods' },
-  { path: '/quantitative-methods', ko: '양적연구', en: 'Quantitative' },
-  { path: '/qualitative-methods', ko: '질적연구방법', en: 'Qual Methods' },
-  { path: '/ahp', ko: 'AHP', en: 'AHP' },
+  {
+    path: '/methods', ko: '연구방법', en: 'Methods',
+    children: [
+      { path: '/quantitative-methods', ko: '양적연구', en: 'Quantitative' },
+      { path: '/qualitative-methods', ko: '질적연구방법', en: 'Qual Methods' },
+      { path: '/ahp', ko: 'AHP', en: 'AHP' },
+    ],
+  },
   { path: '/data-collection', ko: '자료수집', en: 'Data' },
   { path: '/analysis', ko: '분석', en: 'Analysis' },
   { path: '/interpretation', ko: '결과해석', en: 'Interpret' },
   { path: '/writing', ko: '논문작성', en: 'Writing' },
   { path: '/irb-ethics', ko: 'IRB윤리', en: 'IRB' },
 ];
+
+const METHODS_PATHS = ['/methods', '/quantitative-methods', '/qualitative-methods', '/ahp'];
 
 export default function Navbar(): ReactElement {
   const { mode, toggleTheme, colorTheme, setColorTheme, COLOR_OPTIONS } = useTheme();
@@ -29,6 +42,7 @@ export default function Navbar(): ReactElement {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showColorPicker, setShowColorPicker] = useState(false);
+  const [mobileMethodsOpen, setMobileMethodsOpen] = useState(false);
   const colorPickerRef = useRef<HTMLDivElement>(null);
 
   const isKo = language === 'ko';
@@ -61,6 +75,13 @@ export default function Navbar(): ReactElement {
     navigate('/');
   }
 
+  function isActive(item: NavItem): boolean {
+    if (item.children) {
+      return METHODS_PATHS.some(p => location.pathname.startsWith(p));
+    }
+    return location.pathname.startsWith(item.path);
+  }
+
   return (
     <>
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
@@ -72,13 +93,28 @@ export default function Navbar(): ReactElement {
 
           <ul className="nav-links">
             {NAV_ITEMS.map((item) => (
-              <li key={item.path} className="nav-item">
+              <li key={item.path} className={`nav-item ${item.children ? 'nav-item-dropdown' : ''}`}>
                 <Link
                   to={item.path}
-                  className={`nav-link ${location.pathname.startsWith(item.path) ? 'active' : ''}`}
+                  className={`nav-link ${isActive(item) ? 'active' : ''}`}
                 >
                   {isKo ? item.ko : item.en}
+                  {item.children && <i className="fa-solid fa-chevron-down nav-dropdown-arrow" />}
                 </Link>
+                {item.children && (
+                  <ul className="nav-dropdown">
+                    {item.children.map(child => (
+                      <li key={child.path}>
+                        <Link
+                          to={child.path}
+                          className={`nav-dropdown-link ${location.pathname.startsWith(child.path) ? 'active' : ''}`}
+                        >
+                          {isKo ? child.ko : child.en}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
@@ -137,9 +173,36 @@ export default function Navbar(): ReactElement {
         <ul className="mobile-nav-links">
           {NAV_ITEMS.map((item) => (
             <li key={item.path}>
-              <Link to={item.path} className="mobile-nav-link">
-                {isKo ? item.ko : item.en}
-              </Link>
+              {item.children ? (
+                <>
+                  <div className="mobile-nav-parent">
+                    <Link to={item.path} className="mobile-nav-link">
+                      {isKo ? item.ko : item.en}
+                    </Link>
+                    <button
+                      className={`mobile-dropdown-toggle ${mobileMethodsOpen ? 'open' : ''}`}
+                      onClick={() => setMobileMethodsOpen(!mobileMethodsOpen)}
+                    >
+                      <i className="fa-solid fa-chevron-down" />
+                    </button>
+                  </div>
+                  {mobileMethodsOpen && (
+                    <ul className="mobile-nav-children">
+                      {item.children.map(child => (
+                        <li key={child.path}>
+                          <Link to={child.path} className="mobile-nav-link mobile-nav-child-link">
+                            {isKo ? child.ko : child.en}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </>
+              ) : (
+                <Link to={item.path} className="mobile-nav-link">
+                  {isKo ? item.ko : item.en}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
